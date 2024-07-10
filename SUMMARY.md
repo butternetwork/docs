@@ -22,15 +22,14 @@
   * [Relay Service]() 
   * [Contract Interface]()
   * [Fee]()
-* [Deployed Router Contracts](omnichain-development/deployed-router-contracts.md)
-  * [Testnet]()
+* [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
 * [API for Omnichain Message]()
 
 ## 🔥 Butter Bridge Integration
 * [Introduction]()
 * [Contract Interface]()
 * [Fee]()
-* [Deployed Contracts](bridge/deployed-omnichain-contracts.md)
+* [Deployed Contracts](bridge/deployed-bridge-contracts.md)
 * [API for Omnichain Bridge]()
 
 ## 💰 Butter Swap Integration
