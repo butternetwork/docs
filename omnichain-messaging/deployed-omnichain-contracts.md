@@ -50,8 +50,8 @@ The Butter Omnichain Service contracts are deployed on following connected chain
 
 | **Chain Name**    | **Butter Omnichain Service Address**       | Chain ID |
 |-------------------|--------------------------------------------|----------|
-| Mapo Makalu       | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 212      |
-| Sepolia           | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 11155111 |
-| BNB Chain Testnet | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 97       |
-| Arbitrum Sepolia  | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 421614   |
-| DODO Testnet      | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 53457    |
+| Mapo Makalu       | 0x800030161FD2979f0B5c54286Bd77170D3c458Da | 212      |
+| Sepolia           | 0x800030161FD2979f0B5c54286Bd77170D3c458Da | 11155111 |
+| BNB Chain Testnet | 0x800030161FD2979f0B5c54286Bd77170D3c458Da | 97       |
+| Arbitrum Sepolia  | 0x800030161FD2979f0B5c54286Bd77170D3c458Da | 421614   |
+| DODO Testnet      | 0x800030161FD2979f0B5c54286Bd77170D3c458Da | 53457    |

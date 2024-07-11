@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🌈 About Butter Network](README.md)
+* [🔥 About Butter Network](README.md)
 
 ## 🔥 ZK Light Client
 
@@ -11,33 +11,29 @@
 ## 🔥 Omnichain Development
 * [Omnichain Isomorphism](omnichain-development/omnichain-isomorphism.md)
 * [More Possibilities](omnichain-development/more-possibilities.md)
-* [Omnichain Messaging]()
-* [Omnichain Token Bridge]()
-* [Omnichain Swap]()
 
-## 🔥 Butter Omnichain Service Integration
-
+## 🌈 Butter Omnichain Service Integration
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * [Integration Guide]()
   * [Relay Service]() 
   * [Contract Interface]()
   * [Fee]()
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
-* [API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
-  * [GET Message History by Chain Id And Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
+* [👨‍💻 API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
+  * [GET Message History by Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
   * [GET Message Info by Id](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-id.md)
   * [GET Message Info by Source Hash](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-source-hash.md)
 
 
-## 🔥 Butter Bridge Integration
+## 🌈 Butter Bridge Integration
 * [Introduction]()
 * [Contract Interface]()
 * [Fee]()
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
-* [API for Omnichain Bridge]()
+* [👨‍💻 API for Omnichain Bridge]()
 
-## 💰 Butter Swap Integration
 
+## 🌈 Butter Swap Integration
 * [Introduction](butterswap/introduction.md)
 * [Deployed Contracts](butterswap/deployed-contracts.md)
 * [👩‍💻 API for Routing](butterswap/butter-api-for-routing/README.md)
@@ -56,7 +52,7 @@
   * [GET Supported Token Detail List](butterswap/butter-api-for-swap-data/get-supported-token-detail-list.md)
 
 ## 💰 Butter Swap User Guide
-* [User Guide](butterswap/user-guide.md)
+* [🫂 User Guide](butterswap/user-guide.md)
 
 ## 📢 Resources
 
