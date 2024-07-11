@@ -4,7 +4,7 @@
 
 #### Complete Query Example
 
-[https://bn-api.chainservice.io/api/queryCrossInfoBySourceHash?txHash=0xdd15df0239d4b58cf419e2e4243555fe4d862fa4caf154086222dadd3d751013](https://bn-api.chainservice.io/api/queryCrossInfoBySourceHash?txHash=0xdd15df0239d4b58cf419e2e4243555fe4d862fa4caf154086222dadd3d751013)
+[/api/queryCrossInfoBySourceHash?txHash=0xdd15df0239d4b58cf419e2e4243555fe4d862fa4caf154086222dadd3d751013](https://bn-api.chainservice.io/api/queryCrossInfoBySourceHash?txHash=0xdd15df0239d4b58cf419e2e4243555fe4d862fa4caf154086222dadd3d751013)
 
 #### Request Params
 

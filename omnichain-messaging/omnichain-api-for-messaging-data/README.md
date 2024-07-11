@@ -20,3 +20,7 @@ layout:
 # 👨‍💻 Omnichain API for Message Data
  
 Omnichain API for Message Data is providing developers with message data that go through Omnichain service.
+
+Mainnet Host: https://bn-api.chainservice.io
+
+Testnet Host: https://bn-testnet-api.chainservice.io
