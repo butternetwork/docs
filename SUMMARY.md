@@ -23,7 +23,11 @@
   * [Contract Interface]()
   * [Fee]()
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
-* [API for Omnichain Message]()
+* [API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
+  * [GET Message History by Chain Id And Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
+  * [GET Message Info by Id](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-id.md)
+  * [GET Message Info by Source Hash](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-source-hash.md)
+
 
 ## 🔥 Butter Bridge Integration
 * [Introduction]()
