@@ -15,9 +15,9 @@
 ## 🌈 Butter Omnichain Service Integration
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * [Integration Guide]()
-  * [Relay Service]() 
+  * [How To Use](omnichain-messaging/Butter-Omnichain-Service-explain.md)
   * [Contract Interface]()
-  * [Fee]()
+  * [Fee](omnichain-messaging/Omnichain-Fee.md)
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
 * [👨‍💻 API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
   * [GET Message History by Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
