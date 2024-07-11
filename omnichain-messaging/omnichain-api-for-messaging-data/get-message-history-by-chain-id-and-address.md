@@ -4,7 +4,7 @@
 
 #### Complete Query Example
 
-[https://bn-api.chainservice.io/api/queryHistoryByChainIdAddress?chainId=137&address=0x14a5b11be1f996a2c662f8968d017328b4b80c3a&page=1&size=10](https://bn-api.chainservice.io/api/queryHistoryByChainIdAddress?chainId=137&address=0x14a5b11be1f996a2c662f8968d017328b4b80c3a&page=1&size=10)
+[/api/queryHistoryByChainIdAddress?chainId=137&address=0x14a5b11be1f996a2c662f8968d017328b4b80c3a&page=1&size=10](https://bn-api.chainservice.io/api/queryHistoryByChainIdAddress?chainId=137&address=0x14a5b11be1f996a2c662f8968d017328b4b80c3a&page=1&size=10)
 
 #### Request Params
 

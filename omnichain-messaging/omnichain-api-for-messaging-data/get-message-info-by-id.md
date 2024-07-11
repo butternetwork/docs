@@ -4,7 +4,7 @@
 
 #### Complete Query Example
 
-[https://bn-api.chainservice.io/api/queryCrossInfoById?id=322111](https://bn-api.chainservice.io/api/queryCrossInfoById?id=322111)
+[/api/queryCrossInfoById?id=322111](https://bn-api.chainservice.io/api/queryCrossInfoById?id=322111)
 
 #### Request Params
 
