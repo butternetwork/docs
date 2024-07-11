@@ -21,8 +21,6 @@ layout:
 
 The Butter Omnichain Service contracts are deployed on following connected chains.
 
-\
-
 ## Mainnet
 
 | **Chain Name**  | **Butter Omnichain Service Address**       | Chain ID  |
@@ -40,10 +38,8 @@ The Butter Omnichain Service contracts are deployed on following connected chain
 | Linea           | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 59144     |
 | Scroll          | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 534352    |
 | Optimism        | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 10        |
-| zkSync Era      | 0x73E0d6E696Fc38DaC6bf68b4A0b06d35Df10492E | 324       |
 | Arbitrum        | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 42161     |
 | AILayer         | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 2649      |
-| Tron            | TSBDbe1TB8Ft3KZTdbDcZPLFTkL2BFBiZh         | 728126428 |
 
 
 ## Testnet

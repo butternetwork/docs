@@ -9,8 +9,10 @@
 
 
 ## 🔥 Omnichain Development
+
 * [Omnichain Isomorphism](omnichain-development/omnichain-isomorphism.md)
 * [More Possibilities](omnichain-development/more-possibilities.md)
+
 
 ## 🌈 Butter Omnichain Service Integration
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
@@ -26,14 +28,14 @@
 
 
 ## 🌈 Butter Bridge Integration
+
 * [Introduction]()
-* [Contract Interface]()
-* [Fee]()
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
 * [👨‍💻 API for Omnichain Bridge]()
 
 
 ## 🌈 Butter Swap Integration
+
 * [Introduction](butterswap/introduction.md)
 * [Deployed Contracts](butterswap/deployed-contracts.md)
 * [👩‍💻 API for Routing](butterswap/butter-api-for-routing/README.md)
@@ -52,6 +54,7 @@
   * [GET Supported Token Detail List](butterswap/butter-api-for-swap-data/get-supported-token-detail-list.md)
 
 ## 💰 Butter Swap User Guide
+
 * [🫂 User Guide](butterswap/user-guide.md)
 
 ## 📢 Resources
