@@ -17,11 +17,11 @@ layout:
     visible: true
 ---
 
-# Butter Omnichain Service
+# Butter Omnichain Messaging Service
 
 ### Intro
 
-Butter Omnichain Service message enables projects built on one chain to easily synchronize some project information to other chains, and can also call contract methods on other connected chains.
+Butter Omnichain Messaging or Butter Omnichain Service enables projects built on one chain to easily synchronize some project information to other chains, and can also call contract methods on other connected chains.
 
 Butter Omnichain Service uses a light client to verify the transaction of cross-chain messages to ensure that cross-chain messages are authentic and checkable on the chain.
 

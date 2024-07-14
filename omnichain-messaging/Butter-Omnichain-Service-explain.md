@@ -1,14 +1,8 @@
 
 
-## What is Butter Omnichain Service
+## Initiate omni-chain message
 
-It is a cross-chain messaging service composed of OmniServiceRelay on the Mapo chain and OmniService on other chains, enabling users to provide cross-chain services more securely, efficiently, and conveniently.
-
-## How to Use
-
-#### The source chain initiates cross-chain.
-
-When initiating cross-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. You can directly import the protocol using the following code, but make sure to install the protocol with ```'npm install @butternetwork/omniservice``` before usage.
+When initiating omni-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. You can directly import the protocol using the following code, but make sure to install the protocol with ```'npm install @butternetwork/omniservice``` before usage.
 
 ```
 @butternetwork/omniservice/contracts/interface/IMOSV3.sol;
@@ -58,10 +52,11 @@ After understanding the various options available for `MessageData`, we can dire
 
 
 
-#### The target chain executes the cross-chain message
+## Execute the omni-chain message
 
-When our message reaches the target chain, we will execute the cross-chain message according to the choice made during cross-chain initiation, and emit an event upon completion of execution. Depending on the `msgType` chosen freely during cross-chain initiation, we will employ different handling methods on the target chain.
+When message reaches the target chain, it will be executed according to the choice made during cross-chain initiation, and emit an event upon completion of execution. Depending on the `msgType` chosen freely during cross-chain initiation, we will employ different handling methods on the target chain.
 
+### Message execute
 - The `MESSAGE` mode offers greater freedom and broader adaptability, but requires users to implement the following interfaces on the target chain.
 
   ```
@@ -82,6 +77,8 @@ When our message reaches the target chain, we will execute the cross-chain messa
 
   The `mapoExecute` method is flexible. We will pass the information from the source chain along with your custom message. You can freely define the validation rules, including decoding the message, among other things. This method is suitable for a wide range of scenarios.
 
+### Contract call
+
 - The `CALLDATA` mode involves preparing the calldata for execution on the target chain at the time of initiating the cross-chain request. The `OmniService` will directly execute the call and then emit an event upon completion.
 
 Of course, we also consider that there are many different chains currently. Because data cannot perfectly intercommunicate between chains, we have created the Butter Omnichain Service to accomplish this great feat. Each chain has its own characteristics, and occasional execution failures are inevitable. But don't worry, even if cross-chain execution fails, we will save the hash of the failed execution. You can retrieve the information for re-execution through the transaction logs, allowing you to correct the execution logic and attempt the cross-chain message execution again. For more details, please see below:
@@ -94,6 +91,8 @@ Of course, we also consider that there are many different chains currently. Beca
         bytes calldata _messageData
     ) external 
 ```
+
+### Message execution retry
 
 `retryMessageIn` is flexible and can be called with any correct data for execution. It does not alter the cross-chain message, as we save the hash at the time of failure and will perform hash validation. It simply provides more opportunities for attempts, making cross-chain communication more free and seamless.
 
