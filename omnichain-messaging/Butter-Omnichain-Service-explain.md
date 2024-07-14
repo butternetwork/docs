@@ -8,10 +8,10 @@ It is a cross-chain messaging service composed of OmniServiceRelay on the Mapo c
 
 #### The source chain initiates cross-chain.
 
-When initiating cross-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. You can directly import the protocol using the following code, but make sure to install the protocol with ```'npm install @mapprotocol/mos``` before usage.
+When initiating cross-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. You can directly import the protocol using the following code, but make sure to install the protocol with ```'npm install @butternetwork/omniservice``` before usage.
 
 ```
-import "@mapprotocol/mos/contracts/interface/IMOSV3.sol";
+@butternetwork/omniservice/contracts/interface/IMOSV3.sol;
 ```
 
 When initiating a cross-chain request, in addition to the data you wish to execute across chains, we also provide various applicable scenarios for users to flexibly choose the most suitable method according to their own needs.
@@ -74,10 +74,10 @@ When our message reaches the target chain, we will execute the cross-chain messa
       ) external returns (bytes memory newMessage)
   ```
 
-  If you want to facilitate the implementation of the `mapoExecute` method, you can directly install the `@mapprotocol/mos` protocol and import the `IMapoExecutor` interface using the following code:
+  If you want to facilitate the implementation of the `mapoExecute` method, you can directly install the `@butternetwork/omniservice` protocol and import the `IMapoExecutor` interface using the following code:
 
   ```
-  import "@mapprotocol/mos/contracts/interface/IMapoExecutor.sol";
+  import "@butternetwork/omniservice/contracts/interface/IMapoExecutor.sol";
   ```
 
   The `mapoExecute` method is flexible. We will pass the information from the source chain along with your custom message. You can freely define the validation rules, including decoding the message, among other things. This method is suitable for a wide range of scenarios.

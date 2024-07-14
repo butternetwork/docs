@@ -18,7 +18,7 @@
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * [Integration Guide]()
   * [How To Use](omnichain-messaging/Butter-Omnichain-Service-explain.md)
-  * [Contract Interface]()
+  * [Contract Interface](omnichain-messaging/Omnichain-Interface.md)
   * [Fee](omnichain-messaging/Omnichain-Fee.md)
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
 * [👨‍💻 API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
