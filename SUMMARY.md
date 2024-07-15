@@ -16,9 +16,9 @@
 
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * Integration Guide
-  * [How To Use](omnichain-messaging/Butter-Omnichain-Service-explain.md)
-  * [Contract Interface](omnichain-messaging/Omnichain-Interface.md)
-  * [Fee](omnichain-messaging/Omnichain-Fee.md)
+  1. [How To Use](omnichain-messaging/Butter-Omnichain-Service-explain.md)
+  2. [Contract Interface](omnichain-messaging/Omnichain-Interface.md)
+  3. [Fee](omnichain-messaging/Omnichain-Fee.md)
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
 * [👨‍💻 API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
   * [GET Message History by Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
@@ -28,18 +28,27 @@
 ## 🌈 Butter Bridge Integration
 
 * [Introduction]()
-* [Contract Interface](bridge/contracts-interface.md)
-* [Fee](bridge/bridge-fee.md)
+* Integration Guide
+  1. [ How to Use](bridge/integration.md)
+  2. [Contract Interface](bridge/bridge-interface.md)
+  3. [Fee](bridge/bridge-fee.md)
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
 * [👨‍💻 API for Omnichain Bridge]()
 
 ## 🌈 Butter Swap Integration
 
 * [Introduction](butterswap/introduction.md)
-* [Contract Interface](butterswap/contracts-interface.md)
-* [Fee](butterswap/swap-fee.md)
-* [Deployed Contracts](butterswap/deployed-contracts.md)
+* Integration Guide
+
+  1. [How to Use](butterswap/integration.md)
+  2. [Cotract Interface](butterswap/swap-interface.md)
+  3. [Fee](butterswap/swap-fee.md)
+* Deployed Contracts
+
+  1. [v2.1](butterswap/deployed-contracts-v2.1.md)
+  2. [v3.0](butterswap/deployed-contracts-v3.0.md)
 * [👩‍💻 API for Routing](butterswap/butter-api-for-routing/README.md)
+
   * [🟢 Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
   * [GET /route](butterswap/butter-api-for-routing/get-route.md)
   * [GET /swap](butterswap/butter-api-for-routing/get-swap.md)
