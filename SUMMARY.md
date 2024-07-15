@@ -43,7 +43,10 @@
   1. [How to Use](butterswap/integration.md)
   2. [Cotract Interface](butterswap/swap-interface.md)
   3. [Fee](butterswap/swap-fee.md)
-* [Deployed Contracts](butterswap/deployed-contracts.md)
+* Deployed Contracts
+
+  1. [v2.1](butterswap/deployed-contracts-v2.1.md)
+  2. [v3.0](butterswap/deployed-contracts-v3.0.md)
 * [👩‍💻 API for Routing](butterswap/butter-api-for-routing/README.md)
 
   * [🟢 Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
