@@ -96,6 +96,13 @@ Of course, we also consider that there are many different chains currently. Beca
 
 `retryMessageIn` is flexible and can be called with any correct data for execution. It does not alter the cross-chain message, as we save the hash at the time of failure and will perform hash validation. It simply provides more opportunities for attempts, making cross-chain communication more free and seamless.
 
+### How to choose MessageType
+[MESSAGE Type](Omnichain-Type/Message-Type.md) : Without a doubt, the MESSAGE type is flexible and highly extensible, making it suitable for handling various types of cross-chain messages. We highly recommend using this type.
+
+[MESSAGE Type And Relay:true](Omnichain-Type/MessageAndRelayTrue-Type.md) : Of course, if the source chain cannot perfectly handle cross-chain information, you can set the relay attribute of MessageData to true. This way, during the cross-chain process, the relay chain can perform data processing or enhance the cross-chain data before continuing.
+
+[CALLDATA Type](Omnichain-Type/Calldata-Type.md) : When you can clearly and effectively determine the execution method on the target chain from the source chain, you can choose the CALLDATA type. This way, the target chain only needs to grant permission, making cross-chain execution straightforward.
+
 ## Butter Omnichain Service Event 
 
 ```

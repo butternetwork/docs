@@ -17,6 +17,9 @@
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * Integration Guide
   1. [How To Use](omnichain-messaging/Butter-Omnichain-Service-explain.md)
+     1. [MESSAGE Type](omnichain-messaging/Omnichain-Type/Message-Type.md)
+     2. [CALLDATA Typr](omnichain-messaging/Omnichain-Type/Calldata-Type.md)
+     3. [MESSAGE Type And Relay:true](omnichain-messaging/Omnichain-Type/MessageAndRelayTrue-Type.md)
   2. [Contract Interface](omnichain-messaging/Omnichain-Interface.md)
   3. [Fee](omnichain-messaging/Omnichain-Fee.md)
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
