@@ -56,4 +56,8 @@ GET /swap?hash=0x286081342b93d276381a8cf4b43990e3a522fb25d0c50c3467dce7ff4543c92
 }
 ```
 
-**Note**: error code can be found in [here](error-code-list.md)\
+**Note**: error code can be found in [here](error-code-list.md)
+
+
+
+**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**
