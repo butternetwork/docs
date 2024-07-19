@@ -48,7 +48,5 @@ GET /findToken?address=0x13CB04d4a5Dfb6398Fc5AB005a6c84337256eE23
 }
 ```
 
-\
 
-
-\
+**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**

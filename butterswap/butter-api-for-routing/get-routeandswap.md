@@ -2,9 +2,26 @@
 
 GET get best routes and generate swap transaction calldata to swap in Butter router
 
-### **Params**Params
+### **Params**
 
-<table data-header-hidden><thead><tr><th width="210"></th><th></th><th width="94"></th><th width="124"></th><th></th></tr></thead><tbody><tr><td>Name</td><td>Location</td><td>Type</td><td>Required</td><td>Description</td></tr><tr><td>fromChainId</td><td>query</td><td>string</td><td>yes</td><td>source chain id, the supported chain ID list can be get from endpiont /supportedChainList</td></tr><tr><td>toChainId</td><td>query</td><td>string</td><td>yes</td><td>destination chain id</td></tr><tr><td>amount</td><td>query</td><td>string</td><td>yes</td><td>amount of source token</td></tr><tr><td>tokenInAddress</td><td>query</td><td>string</td><td>yes</td><td>address of source token, use 0x0000000000000000000000000000000000000000 for native token on most blockchains, T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb for native token on Tron</td></tr><tr><td>tokenOutAddress</td><td>query</td><td>string</td><td>yes</td><td>address of destination token</td></tr><tr><td>type</td><td>query</td><td>string</td><td>yes</td><td>swap type, one of "exactIn" and "exactOut"</td></tr><tr><td>slippage</td><td>query</td><td>string</td><td>yes</td><td>slippage of swap, a integer in rang [0, 5000], e.g, 100 means 1%</td></tr><tr><td>entrance</td><td>query</td><td>string</td><td>yes</td><td>entrance of swap, please contact us for applying your dedicated entrance</td></tr><tr><td>from</td><td>query</td><td>string</td><td>yes</td><td>sender address on source chain</td></tr><tr><td>receiver</td><td>query</td><td>string</td><td>yes</td><td>receiver address on destination chain</td></tr><tr><td>callData</td><td>query</td><td>string</td><td>no</td><td>encoded call data if receiver is a contract</td></tr></tbody></table>
+
+| Name | Location | Type | Required | Description                                                                                                                                                                    |
+|-------------------------------|----------------|------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fromChainId                   | query          | string | yes      | source chain id, the supported chain ID list can be get from endpiont /supportedChainList                                                                                      |
+| toChainId                     | query          | string | yes      | destination chain id                                                                                                                                                           |
+| amount                        | query          | string | yes      | amount of source token                                                                                                                                                         |
+| tokenInAddress                | query          | string | yes      | address of source token, use 0x0000000000000000000000000000000000000000 for native token on most blockchains, T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb for native token on Tron      |
+| tokenOutAddress               | query          | string | yes      | address of destination token                                                                                                                                                   |
+| type                          | query          | string | yes      | swap type, one of "exactIn" and "exactOut"                                                                                                                                     |
+| slippage                      | query          | string | yes      | slippage of swap, a integer in range [0, 5000], e.g, 100 means 1%. For cross chain swap, the min slippage is 300                                                               |
+| from                          | query          | string | yes      | sender address on source chain                                                                                                                                                 |
+| receiver                      | query          | string | yes      | receiver address on destination chain                                                                                                                                          |
+| entrance                      | query          | string | no       | entrance of swap, ether entrance or referrer should be specified. It is required when source chain is Near, please contact us for applying your dedicated entrance             |
+| referrer                      | query          | string | no       | referrer of swap, ether entrance or referrer should be specified. If entrance is not provided, referrer is required                                                            |
+| feeType                       | query          | string | no       | fee type when collecting fee, "0" for fixed fee, "1" for proportion fee, the default value is "1". This field is valid only when entrance is not provided                      |
+| rateOrNativeFee               | query          | string | no       | if fee type is "0", this is the fixed fee amount in native token, if fee type is "1", this is the proportion fee rate. This field is valid only when entrance is not provided' |
+| callData                      | query          | string | no       | encoded call data if receiver is a contract                                                                                                                                    |
+
 
 ### Request Example
 
@@ -378,3 +395,6 @@ GET /routeAndSwap?fromChainId=56&toChainId=22776&amount=1&tokenInAddress=0x00000
 ```
 
 **Note**: error code can be found in [here](error-code-list.md)
+
+
+**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**

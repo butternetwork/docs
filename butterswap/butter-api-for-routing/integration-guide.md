@@ -349,3 +349,7 @@ https://bs-router-v3.chainservice.io/routeAndSwap?fromChainId=1&toChainId=56&amo
   ]
 }
 ```
+
+
+
+**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**
