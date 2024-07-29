@@ -1,13 +1,16 @@
-# Use butter bridge to transfer an asset across blockchains.
+# Butter Bridge Interface
 
-## interface
+## import
 
-#### IButterBridgeV3
+Directly import the bridge interface using the following code.
+```solidity
+import "@butternetwork/bridge/contracts/interface/IButterBridgeV3.sol";
+```
+Make sure to install the package with 'npm install @butternetwork/bridge before usage.
+
+## swapOutToken
 
 ```solidity
-
-interface IButterBridgeV3 {
-
     struct BridgeParam {
         uint256 gasLimit;
         bytes refundAddress;
@@ -23,6 +26,11 @@ interface IButterBridgeV3 {
         bytes calldata _swapData
     ) external payable returns (bytes32 orderId);
 
+```
+
+## getNativeFee
+
+```solidity
 
     function getNativeFee(
         address _token,
@@ -30,26 +38,11 @@ interface IButterBridgeV3 {
         uint256 _toChain
     ) external view returns (uint256);
 
-
-    event CollectFee(bytes32 indexed orderId, address indexed token, uint256 value);
-
-    event SwapOut(
-        bytes32 indexed orderId, // orderId
-        uint256 indexed tochain, // to chain
-        address indexed token,   // token to across chain 
-        uint256 amount,          // amount to transfer
-        address from,            // account send this transation
-        address caller,          // msg.sender call swapOutToken
-        bytes to,                // account receiver on target chain
-        bytes outToken,          // token bridge to target chain(token is native this maybe wtoken)
-        uint256 gasLimit,        // gasLimit for call on target chain 
-        uint256 messageFee       // native amount for pass message  
-    );
 }
 
 ```
 
-IButterReceiver
+## IButterReceiver
 
 ```solidity
 interface IButterReceiver {
