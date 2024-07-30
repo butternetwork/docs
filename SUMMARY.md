@@ -33,7 +33,6 @@
 * [Contract Interface](bridge/bridge-interface.md)
 * [Fee](bridge/bridge-fee.md)
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
-* [API for Omnichain Bridge]()
 
 ## 🌈 Butter Swap Integration
 

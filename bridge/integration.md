@@ -1,7 +1,5 @@
 # How to bridge
 
-You will need the butter [bridge interface](./bridge-interface.md).
-
 To perform a cross chain `swapOutToken()` in solidity, here is an example:
 
 For the native gas fee required for `swapOutToken()` you need to call  `getNativeFee()` to get the amount you should send as msg.value.

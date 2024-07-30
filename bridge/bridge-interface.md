@@ -4,7 +4,7 @@
 
 Directly import the bridge interface using the following code.
 ```solidity
-import "@butternetwork/bridge/contracts/interface/IButterBridgeV3.sol";
+import "@butternetwork/bridge/contracts/interface/IButterMosV2.sol";
 ```
 Make sure to install the package with 'npm install @butternetwork/bridge before usage.
 
