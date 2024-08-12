@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🔥 About Butter Network](README.md)
+* [🌈 About Butter Network](README.md)
 
 ## 🔥 ZK Light Client
 
@@ -16,41 +16,41 @@
 
 * [Introduction](omnichain-messaging/butter-omnichain-service.md)
 * [Integration Guide](omnichain-messaging/Butter-Omnichain-Service-explain.md)
-     1. [MESSAGE](omnichain-messaging/Omnichain-Type/Message-Type.md)
-     2. [CALLDATA](omnichain-messaging/Omnichain-Type/Calldata-Type.md)
-     3. [MESSAGE And Relay](omnichain-messaging/Omnichain-Type/MessageAndRelayTrue-Type.md)
+  * [MESSAGE](omnichain-messaging/Omnichain-Type/Message-Type.md)
+  * [CALLDATA](omnichain-messaging/Omnichain-Type/Calldata-Type.md)
+  * [MESSAGE And Relay](omnichain-messaging/Omnichain-Type/MessageAndRelayTrue-Type.md)
 * [Contract Interface](omnichain-messaging/Omnichain-Interface.md)
 * [Fee](omnichain-messaging/Omnichain-Fee.md)
 * [Deployed Contracts](omnichain-messaging/deployed-omnichain-contracts.md)
-* [API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
+* [👨‍💻 API for Omnichain Message](omnichain-messaging/omnichain-api-for-messaging-data/README.md)
   * [GET Message History by Source Address](omnichain-messaging/omnichain-api-for-messaging-data/get-message-history-by-chain-id-and-address.md)
   * [GET Message Info by Id](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-id.md)
   * [GET Message Info by Source Hash](omnichain-messaging/omnichain-api-for-messaging-data/get-message-info-by-source-hash.md)
 
-## 🌈 Butter Bridge Integration
+## 🔥 Butter Bridge Integration
 
 * [Integration Guide](bridge/integration.md)
 * [Contract Interface](bridge/bridge-interface.md)
 * [Fee](bridge/bridge-fee.md)
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
 
-## 🌈 Butter Swap Integration
+## 💰 Butter Swap Integration
 
 * [Introduction](butterswap/introduction.md)
-* [Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
-  1. [Cotract Interface](butterswap/router-interface.md)
-  2. [Fee](butterswap/swap-fee.md)
+* [🟢 Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
+  * [Contract Interface](butterswap/router-interface.md)
+  * [Fee](butterswap/swap-fee.md)
 * [Deployed Contracts](butterswap/deployed-contracts-v3.0.md)
   * [v2.1](butterswap/deployed-contracts-v2.1.md)
-* [API for Routing](butterswap/butter-api-for-routing/README.md)
+* [👩‍💻 API for Routing](butterswap/butter-api-for-routing/README.md)
   * [Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
   * [GET /route](butterswap/butter-api-for-routing/get-route.md)
   * [GET /swap](butterswap/butter-api-for-routing/get-swap.md)
   * [GET /routeAndSwap](butterswap/butter-api-for-routing/get-routeandswap.md)
   * [GET /supportedChainList](butterswap/butter-api-for-routing/get-supportedchainlist.md)
   * [GET /findToken](butterswap/butter-api-for-routing/get-findtoken.md)
-  * [Error Code List](butterswap/butter-api-for-routing/error-code-list.md)
-* [API for Swap Data](butterswap/butter-api-for-swap-data/README.md)
+  * [🔴 Error Code List](butterswap/butter-api-for-routing/error-code-list.md)
+* [👨‍💻 API for Swap Data](butterswap/butter-api-for-swap-data/README.md)
   * [GET Swap History by Source Hash](butterswap/butter-api-for-swap-data/get-swap-history-by-source-hash.md)
   * [GET Swap History by Source Address](butterswap/butter-api-for-swap-data/get-swap-history-by-source-address.md)
   * [GET Swap Info by Order ID](butterswap/butter-api-for-swap-data/get-swap-info-by-order-id.md)

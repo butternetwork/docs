@@ -1,6 +1,6 @@
-## How to swap and bridge
+# Contract Interface
 
-You will need the butter [router interface](./swap-interface.md).
+You will need the butter [router interface](broken-reference).
 
 To perform a swap cross chain `swapAndBridge()` in solidity, here is an example:
 
