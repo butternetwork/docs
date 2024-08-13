@@ -30,4 +30,3 @@ layout:
 
 Butter is an **Omnichain Interoperability Hub** integrated with **ZK technology** that enables users with global DAPP accessibility and data availability, building an infrastructure that makes transactions transverse across chain to chain freely and securely.
 
-\
