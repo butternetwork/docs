@@ -43,6 +43,7 @@ GET /supportedChainList
     59144,
     534352,
     42161,
+    1360104473493505,
     10
   ]
 }
@@ -50,29 +51,31 @@ GET /supportedChainList
 
 #### Butter Chain ID explanation
 
-| Chain Id         | Blockchain Name         |
-| ---------------- | ----------------------- |
-| 1                | Ethereum                |
-| 137              | Polygon Mainnet         |
-| 56               | BNB Smart Chain Mainnet |
-| 1030             | Conflux eSpace          |
+| Chain Id        | Blockchain Name         |
+|-----------------|-------------------------|
+| 1               | Ethereum                |
+| 137             | Polygon Mainnet         |
+| 56              | BNB Smart Chain Mainnet |
+| 1030            | Conflux eSpace          |
 | 1360100178526209 | Near Protocol           |
-| 22776            | MAP Protocol            |
-| 728126428        | Tron                    |
-| 8217             | Klaytn Mainnet Cypress  |
-| 1501             | BEVM Canary             |
-| 4200             | Merlin Mainnet          |
-| 2649             | AILayer                 |
-| 8453             | Base                    |
-| 81457            | Blast                   |
-| 324              | zkSync Mainnet          |
-| 223              | B2 Mainnet              |
-| 810180           | zkLink Nova Mainnet     |
-| 5000             | Mantle                  |
-| 59144            | Linea                   |
-| 534352           | Scroll                  |
-| 42161            | Arbitrum One            |
-| 10               | OP Mainnet              |
+| 22776           | MAP Protocol            |
+| 728126428       | Tron                    |
+| 8217            | Klaytn Mainnet Cypress  |
+| 1501            | BEVM Canary             |
+| 4200            | Merlin Mainnet          |
+| 2649            | AILayer                 |
+| 8453            | Base                    |
+| 81457           | Blast                   |
+| 324             | zkSync Mainnet          |
+| 223             | B2 Mainnet              |
+| 810180          | zkLink Nova Mainnet     |
+| 5000            | Mantle                  |
+| 59144           | Linea                   |
+| 534352          | Scroll                  |
+| 42161           | Arbitrum One            |
+| 10              | OP Mainnet              |
+| 1360104473493505 | TON                     |
+| 197710212031    | Solana                  |
 
 
 

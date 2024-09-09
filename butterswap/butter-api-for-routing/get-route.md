@@ -5,25 +5,26 @@ GET get routes from 'tokenIn' to 'tokenOut', support both cross chain and same c
 
 ### **Params**
 
-|Name|Location|Type| Required | Description                                                                                                                                                                    |
-|---|---|---|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|fromChainId|query|string| yes      | source chain id, the supported chain ID list can be get from endpiont /supportedChainList                                                                                      | 
-|toChainId|query|string| yes      | destination chain id                                                                                                                                                           |
-|amount|query|string| yes      | amount of source token                                                                                                                                                         | 1.0                                                                  |
-|tokenInAddress|query|string| yes      | address of source token, use 0x0000000000000000000000000000000000000000 for native token on most blockchains, T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb for native token on Tron      |
-|tokenOutAddress|query|string| yes      | address of destination token                                                                                                                                                   |
-|type|query|string| yes      | swap type, one of "exactIn" and "exactOut"                                                                                                                                     |
-|slippage|query|string| yes      | slippage of swap, a integer in range [0, 5000], e.g, 100 means 1%. For cross chain swap, the min slippage is 300                                                               |
-|receiver|query|string| no       | receiver on destination chain, it is required when source chain is Solana                                                                                                      |
-| entrance                      | query          | string | no       | entrance of swap, ether entrance or referrer should be specified. It is required when source chain is Near, please contact us for applying your dedicated entrance             |
-| referrer                      | query          | string | no       | referrer of swap, ether entrance or referrer should be specified. If entrance is not provided, referrer is required                                                            |
-|feeType|query|string| no       | fee type when collecting fee, "0" for fixed fee, "1" for proportion fee, the default value is "1". This field is valid only when entrance is not provided                      |
-|rateOrNativeFee|query|string| no       | if fee type is "0", this is the fixed fee amount in native token, if fee type is "1", this is the proportion fee rate. This field is valid only when entrance is not provided' |
+| Name            |Location|Type| Required | Description                                                                                                                                                                    |
+|-----------------|---|---|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| fromChainId     |query|string| yes      | source chain id, the supported chain ID list can be get from endpiont /supportedChainList                                                                                      | 
+| toChainId       |query|string| yes      | destination chain id                                                                                                                                                           |
+| amount          |query|string| yes      | amount of source token                                                                                                                                                         | 1.0                                                                  |
+| tokenInAddress  |query|string| yes      | address of source token, use 0x0000000000000000000000000000000000000000 for native token on most blockchains, T9yD14Nj9j7xAB4dbGeiX9h8unkKHxuWwb for native token on Tron      |
+| tokenOutAddress |query|string| yes      | address of destination token                                                                                                                                                   |
+| type            |query|string| yes      | swap type, one of "exactIn" and "exactOut"                                                                                                                                     |
+| slippage        |query|string| yes      | slippage of swap, a integer in range [0, 5000], e.g, 100 means 1%. For cross chain swap, the min slippage is 150， for cross chain from/to TON, min slippage is 300             |
+| receiver        |query|string| no       | receiver on destination chain, it is required when source chain is Solana                                                                                                      |
+| entrance        | query          | string | no       | entrance of swap, ether entrance or referrer should be specified. It is required when source chain is Near, please contact us for applying your dedicated entrance             |
+| referrer        | query          | string | no       | referrer of swap, ether entrance or referrer should be specified. If entrance is not provided, referrer is required                                                            |
+| feeType         |query|string| no       | fee type when collecting fee, "0" for fixed fee, "1" for proportion fee, the default value is "1". This field is valid only when entrance is not provided                      |
+| rateOrNativeFee |query|string| no       | if fee type is "0", this is the fixed fee amount in native token, if fee type is "1", this is the proportion fee rate. This field is valid only when entrance is not provided' |
+| caller          | query          | string | no       | caller of butter router contract                                                                                                                                               |
 
 #### Request Example
 
 ```bash
-GET /route?fromChainId=56&toChainId=22776&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x0000000000000000000000000000000000000000&type=exactIn&slippage=100&entrance=<entrance>
+GET /route?fromChainId=56&toChainId=22776&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x0000000000000000000000000000000000000000&type=exactIn&slippage=150&entrance=<entrance>
 ```
 
 ### **Responses**
