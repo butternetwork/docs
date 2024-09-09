@@ -4,13 +4,13 @@ GET generated swap transaction calldata to swap in Butter router
 
 #### Params
 
-| Name     | Location | Type   | Required | Description                                                       |
-| -------- | -------- | ------ | -------- | ----------------------------------------------------------------- |
-| hash     | query    | string | yes      | the route hash returned by /route                                 |
-| slippage | query    | string | yes      | slippage of swap, a integer in rang \[0, 5000], e.g, 100 means 1% |
-| from     | query    | string | yes      | sender address on source chain                                    |
-| receiver | query    | string | yes      | receiver address on destination chain                             |
-| callData | query    | string | no       | encoded call data if receiver is a contract                       |
+| Name     | Location | Type   | Required | Description                                                                                                                                                        |
+| -------- | -------- | ------ | -------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| hash     | query    | string | yes      | the route hash returned by /route                                                                                                                                  |
+| slippage | query    | string | yes      | slippage of swap, a integer in rang \[0, 5000], e.g, 100 means 1%. For cross chain swap, the min slippage is 150， for cross chain from/to TON, min slippage is 300 |
+| from     | query    | string | yes      | sender address on source chain                                                                                                                                     |
+| receiver | query    | string | yes      | receiver address on destination chain                                                                                                                              |
+| callData | query    | string | no       | encoded call data if receiver is a contract                                                                                                                        |
 
 ### Request Example
 
