@@ -1,4 +1,4 @@
-## MessageType:MESSAGE And Relay:true
+## Message And Relay
 
 Example Requirement: There is a key on source chain A. As it passes through the relay chain, the corresponding value of the key on the relay chain is transmitted to chain B for storage, so that chain B can also retrieve the value corresponding to the key.
 
@@ -128,7 +128,7 @@ contract B is IMapoExecutor {
 }
 ```
 
-Advantages of `MESSAGE` with `Relay:true`:
+Advantages of `MESSAGE` with `Relay`:
 
 - Enables data processing through the relay chain.
 - Provides a unified orderId for cross-chain transactions, ensuring clarity in the cross-chain path.

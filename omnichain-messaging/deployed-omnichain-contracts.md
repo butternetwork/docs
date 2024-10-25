@@ -1,25 +1,6 @@
----
-cover: ../.gitbook/assets/Deployed Omnichain Contracts (1).jpg
-coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
+# Deployed Omni-chain Service Contracts
 
-# Deployed Omnichain Service Contracts
-
-The Butter Omnichain Service contracts are deployed on following connected chains.
+The Butter Omni-chain Service contracts are deployed on following connected chains.
 
 ## Mainnet
 
@@ -43,6 +24,21 @@ The Butter Omnichain Service contracts are deployed on following connected chain
 
 
 ## Testnet
+
+### v3.1
+
+| **Chain Name**    | **Butter Omnichain Service Address**           | Chain ID |
+|-------------------|------------------------------------------------|----------|
+| Mapo Makalu       | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://testnet.maposcan.io/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848) | 212      |
+| Sepolia           | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://sepolia.etherscan.io/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 11155111 |
+| BNB Chain Testnet | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://testnet.bscscan.com/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 97       |
+| Arbitrum Sepolia  | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://sepolia.arbiscan.io/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 421614   |
+| DODO Testnet      | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://testnet-scan.dodochain.com/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 53457    |
+| Ton Testnet       | [EQD9pVSCmODM-M3V380x4OH1kG6a7tTTnsP00n7M59iD5etS](https://testnet.tonscan.org/address/EQD9pVSCmODM-M3V380x4OH1kG6a7tTTnsP00n7M59iD5etS)    | 1360104473493506    |
+
+
+
+### v3.0
 
 | **Chain Name**    | **Butter Omnichain Service Address**           | Chain ID |
 |-------------------|------------------------------------------------|----------|

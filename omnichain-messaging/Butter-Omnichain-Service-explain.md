@@ -1,14 +1,36 @@
 
 
-## Initiate omni-chain message
+## Initialize
 
-When initiating omni-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. You can directly import the protocol using the following code, but make sure to install the protocol with ```'npm install @butternetwork/omniservice``` before usage.
+When initiating omni-chain on the source chain contract, it is necessary to introduce the IMOSV3 interface. 
+You can directly import the protocol using the following code, but make sure to install the protocol with 
+```'npm install @butternetwork/omniservice``` 
+before usage.
 
 ```
 @butternetwork/omniservice/contracts/interface/IMOSV3.sol;
 ```
 
-When initiating a cross-chain request, in addition to the data you wish to execute across chains, we also provide various applicable scenarios for users to flexibly choose the most suitable method according to their own needs.
+### Estimate omni-chain message fee
+
+Before initiating a cross-chain transaction, it is necessary to estimate the cross-chain messaging fee.
+The fee structure for omni-chain message can be referenced here [Omnichain Fee](Omnichain-Fee.md).
+
+The interface for estimating the fee is
+```solidity
+function getMessageFee(uint256 toChain, address feeToken, uint256 gasLimit) external view returns (uint256 fee, address receiver);
+```
+
+- `toChain` - Target chain id, get [target chain id](deployed-omnichain-contracts.md) here.
+- `feeToken` - Token address that supports payment fee, native token is `address(0)`.
+
+    Currently, the only supported is native token, and more tokens will be supported in the future.
+- `gasLimit` - The gasLimit allowed to be consumed by an operation performed on the target chain.
+
+
+## Initiate omni-chain message
+
+When initiating a omni-chain request, in addition to the data you wish to execute across chains, we also provide various applicable scenarios for users to flexibly choose the most suitable method according to their own needs.
 
 ```
     enum MessageType {
@@ -28,11 +50,12 @@ When initiating a cross-chain request, in addition to the data you wish to execu
 
 Check the structure of MessageData.
 
-- By default, when `relay` is false, it means that during the cross-chain message passing through the relay chain (Mapo), no additional processing is done, and the message is directly sent to the target chain's event.
-  - If there is a requirement to set `relay` to true, then during the cross-chain message process, when passing through the relay chain (Mapo), the `mapoExecute` method will also be executed to obtain the newly returned payload, which will then be sent to the target chain's event.
-- Currently, there are two choices for `msgType`
-  - `MESSAGE` allows for freely defined cross-chain messages. When they reach the target chain, the cross-chain messages are passed to the `mapoExecute` method. You can define your own preferred checking methods and data processing in this method to complete the cross-chain message execution.
-  - `CALLDATA` requires the complete `calldata` to be prepared on the source chain for execution on the target. OmniService contract should be granted appropriate permissions to execute the call.
+- `relay` indicates whether message processing is required on MAP Relay Chain. 
+  - If `relay` is false, during the message passing through the relay chain (Mapo), no additional processing is done, and the message is directly sent to the target chain.
+  - If `relay` is true, the message will be processed on relay chain before forwarding to the target chain. Check [Message And Relay](./message-relay.md) for more details.
+- `msgType` indicates different message
+  - `MESSAGE` allows for freely defined omni-chain messages. When they reach the target chain, the cross-chain messages are passed to the `mapoExecute` method. You can define your own preferred checking methods and data processing in this method to complete the cross-chain message execution.
+  - `CALLDATA` requires the complete `calldata` to be prepared on the source chain for execution on the target. OmniService contract should be granted permissions to execute the call.
 - `target` is the contract address where the message will be executed upon reaching the target chain
 - `payload` is the data intended for cross-chain transmission.
 - `gasLimit` is the maximum gas limit allowed for execution on the target chain.
@@ -50,11 +73,10 @@ After understanding the various options available for `MessageData`, we can dire
     ) external payable returns (bytes32);
 ```
 
-
-
 ## Execute the omni-chain message
 
-When message reaches the target chain, it will be executed according to the choice made during cross-chain initiation, and emit an event upon completion of execution. Depending on the `msgType` chosen freely during cross-chain initiation, we will employ different handling methods on the target chain.
+When message reaches the target chain, it will be executed according to the choice made during cross-chain initiation, and emit an event upon completion of execution. 
+Depending on the `msgType` chosen freely during cross-chain initiation, we will employ different handling methods on the target chain.
 
 ### Message execute
 - The `MESSAGE` mode offers greater freedom and broader adaptability, but requires users to implement the following interfaces on the target chain.
@@ -83,6 +105,10 @@ When message reaches the target chain, it will be executed according to the choi
 
 Of course, we also consider that there are many different chains currently. Because data cannot perfectly intercommunicate between chains, we have created the Butter Omnichain Service to accomplish this great feat. Each chain has its own characteristics, and occasional execution failures are inevitable. But don't worry, even if cross-chain execution fails, we will save the hash of the failed execution. You can retrieve the information for re-execution through the transaction logs, allowing you to correct the execution logic and attempt the cross-chain message execution again. For more details, please see below:
 
+
+### Message execution retry
+
+
 ```
     function retryMessageIn(
         uint256 _fromChain,
@@ -92,36 +118,16 @@ Of course, we also consider that there are many different chains currently. Beca
     ) external 
 ```
 
-### Message execution retry
-
-`retryMessageIn` is flexible and can be called with any correct data for execution. It does not alter the cross-chain message, as we save the hash at the time of failure and will perform hash validation. It simply provides more opportunities for attempts, making cross-chain communication more free and seamless.
+`retryMessageIn` is flexible and can be called with any correct data for execution. 
+It does not alter the cross-chain message, as we save the hash at the time of failure and will perform hash validation. 
+It simply provides more opportunities for attempts, making cross-chain communication more free and seamless.
 
 ### How to choose MessageType
-[MESSAGE Type](Omnichain-Type/Message-Type.md) : Without a doubt, the MESSAGE type is flexible and highly extensible, making it suitable for handling various types of cross-chain messages. We highly recommend using this type.
+[MESSAGE](Omnichain-Type/Message-Type.md) : MESSAGE type is flexible and highly extensible, making it suitable for handling various types of cross-chain messages. We highly recommend using this type.
 
-[MESSAGE Type And Relay:true](Omnichain-Type/MessageAndRelayTrue-Type.md) : Of course, if the source chain cannot perfectly handle cross-chain information, you can set the relay attribute of MessageData to true. This way, during the cross-chain process, the relay chain can perform data processing or enhance the cross-chain data before continuing.
+[Message And Relay](Omnichain-Type/MessageAndRelayTrue-Type.md) : Of course, if the source chain cannot perfectly handle cross-chain information, you can set the relay attribute of MessageData to true. This way, during the cross-chain process, the relay chain can perform data processing or enhance the cross-chain data before continuing.
 
-[CALLDATA Type](Omnichain-Type/Calldata-Type.md) : When you can clearly and effectively determine the execution method on the target chain from the source chain, you can choose the CALLDATA type. This way, the target chain only needs to grant permission, making cross-chain execution straightforward.
+[CALLDATA](Omnichain-Type/Calldata-Type.md) : When you can clearly and effectively determine the execution method on the target chain from the source chain, you can choose the CALLDATA type. This way, the target chain only needs to grant permission, making cross-chain execution straightforward.
 
-## Butter Omnichain Service Event 
 
-```
-	event MessageOut(
-        uint256 indexed fromChain,
-        uint256 indexed toChain,
-        bytes32 orderId,
-        bytes fromAddrss,
-        bytes messageData
-    );
-    
-    event MessageIn(
-        uint256 indexed fromChain,
-        uint256 indexed toChain,
-        bytes32 orderId,
-        bytes fromAddrss,
-        bytes messageData,
-        bool result,
-        bytes reason
-    );
-```
 
