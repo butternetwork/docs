@@ -2,7 +2,7 @@
 
 ## Chain Id and Contract
 
-Check [Contract](deployed-omnichain-contracts.md) here.
+Check [Contract](../deployed-omnichain-contracts.md) here.
 
 ## Ton Network message out
 
@@ -70,6 +70,6 @@ It is essential to ensure that the message data payload is a message that can be
     ) external payable returns (bytes32);
 ```
 Here, `toChain` is the TON Network chain id:
-- mainnet: 1360104473493505
-- testnet: 1360104473493506
+- mainnet: `1360104473493505`
+- testnet: `1360104473493506`
 
