@@ -43,17 +43,6 @@ cell msg = begin_cell()
 - `gasLimit` is the maximum gas limit allowed for execution on the target chain.
 
 
-### External out message
-If the omni-chain message is sent successfully, an external out message will be generated, similar to an EVM event.
-```
-begin_cell()
-    .store_uint(ton_chainId, 64)
-    .store_uint(to_chain, 64)
-    .store_uint(order_id, 64)
-    .store_slice(sender_address)
-    .store_ref(args)
-.end_cell()
-```
 
 ## Message to Ton Network
 
@@ -69,7 +58,26 @@ It is essential to ensure that the message data payload is a message that can be
         address feeToken
     ) external payable returns (bytes32);
 ```
+
 Here, `toChain` is the TON Network chain id:
 - mainnet: `1360104473493505`
 - testnet: `1360104473493506`
+- 
+### Execute on Ton Network
+
+On ton network, will send an `execute` message to the target contract.
+```
+begin_cell()
+    .store_op(op::mapo_execute)
+    .store_query_id(query_id)
+    .store_uint(1, 64) ;; from chain id
+    .store_uint(56, 64) ;; to chain id
+    .store_slice(sender_address) ;; sender address
+    .store_uint(2, 256) ;; order id
+    .store_ref(begin_cell().end_cell()) ;; message
+    .end_cell()
+```
+
+
+
 
