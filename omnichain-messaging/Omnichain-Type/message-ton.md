@@ -4,6 +4,10 @@
 
 Check [Contract](../deployed-omnichain-contracts.md) here.
 
+### Ton Testnet contract
+
+`kQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5SeP`
+
 ## Ton Network message out
 
 ### Call message out
@@ -12,19 +16,16 @@ Check [Contract](../deployed-omnichain-contracts.md) here.
 slice bridge_addr = <bridge address>;
 ;; message out body
 cell body = begin_cell()
-    .store_uint(0x136a3529, 32) ;; op::message_out
-    .store_uint(0, 64) ;; queryId
-    .store_ref(
-        begin_cell()
-            .store_uint(0, 8) ;; relay, 0 or 1
-            .store_uint(0, 8) ;; msgType, 0 for message or 1 for calldata
-            .store_uint(56, 64) ;; toChain, eg. 56 for bnb
-            .store_slice(begin_cell().store_uint(0x70997970c51812dc3a010c7d01b50e0d17dc79c8, 512).end_cell().begin_parse()) ;; targetAddress
-            .store_ref(begin_cell().store_uint(1, 8).end_cell()) ;; payload, custom data
-            .store_uint(200000000, 64) ;; gasLimit
-            .end_cell()
-    )
-    .end_cell();
+        .store_uint(0x136a3529, 32) ;; op::message_out
+        .store_uint(0, 64) ;; queryId
+        .store_uint(0, 8) ;; relay, 0 or 1
+        .store_uint(0, 8) ;; msgType, 0 for message or 1 for calldata
+        .store_uint(56, 64) ;; toChain, eg. 56 for bnb
+        .storeAddress(<initiator_address>) ;; initiator
+        .store_slice(<target>) ;; target address
+        .store_uint(200000000, 64) ;; gasLimit
+        .store_ref(<payload>) ;; payload, custom data
+    ).end_cell();
 
 ;; internal message
 cell msg = begin_cell()
@@ -66,6 +67,7 @@ Here, `toChain` is the TON Network chain id:
 ### Execute on Ton Network
 
 On ton network, will send an `execute` message to the target contract.
+
 ```
 begin_cell()
     .store_op(op::mapo_execute)
