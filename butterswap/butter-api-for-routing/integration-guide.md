@@ -44,12 +44,8 @@ https://bs-router-v3.chainservice.io/supportedChainList
     1,
     137,
     56,
-    1030,
-    1360100178526209,
     22776,
     728126428,
-    8217,
-    1501,
     4200,
     2649,
     8453,
@@ -63,14 +59,10 @@ ChainId explanation:
 * 1: Ethereum
 * 137: Polygon
 * 56: BSC
-* 1030: Conflux
-* 1360100178526209: Near
 * 22776: Map Protocol
 * 728126428: Tron
-* 8217: Klaytn
-* 1501: BEVM
 * 4200: Arbitrum
-* 2649: Avalanche
+* 2649: AILayer
 * 8453: Base
 * 81457: Blast
 
