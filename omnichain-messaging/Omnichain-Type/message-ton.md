@@ -6,7 +6,7 @@ Check [Contract](../deployed-omnichain-contracts.md) here.
 
 ### Ton Testnet contract
 
-`kQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5SeP`
+`EQDbjXKGrcvjya4mo1IWc821p6Pt0_Hdv0GYsyI-sbDUNQVe`
 
 ## Ton Network message out
 
@@ -37,11 +37,23 @@ cell msg = begin_cell()
     .end_cell();
 ```
 
-- `relay` indicates whether message processing is required on MAP Relay Chain.
-- `msgType` indicates different message, `MESSAGE` or `CALLDATA`.
+- `relay` indicates whether message processing is required on MAP Relay Chain (set to `1` if processed on MAP Relay Chain).
+- `msgType` indicates different message, `MESSAGE` (set to `1`) or `CALLDATA` (set to `0`, deprecated, not supported on TON Network).
 - `target` is the contract address where the message will be executed upon reaching the target chain
 - `payload` is the data intended for cross-chain transmission.
 - `gasLimit` is the maximum gas limit allowed for execution on the target chain.
+
+### data example
+
+| parameter | data                                                                   |                                                                          |
+|-----------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| relay     | `0`                                                                    |                                                                          |
+| msgType   | `1`                                                                    |                                                                          |
+| toChain   | `11155111`                                                             | Sepolia chain id                                                         |
+| initiator | `0x01f723e983d1cfc0da138b9046e03ca500dbe8a23e12b960c415ad423615180ecb` | The raw address of <br> `EQD3I-mD0c_A2hOLkEbgPKUA2-iiPhK5YMQVrUI2FRgOy4LB` |
+| target    | `0x8c8afd3ff50c4D8e0323815b29E510a77D2c41fd`                           | Executor contract on Sepolia                                             |
+| gasLimit  | 300000                                                                 |                                                                          |
+| payload   | `0x96a296d224f285c6...`                                                |                                                                          |
 
 
 
@@ -63,7 +75,21 @@ It is essential to ensure that the message data payload is a message that can be
 Here, `toChain` is the TON Network chain id:
 - mainnet: `1360104473493505`
 - testnet: `1360104473493506`
-- 
+
+And check [MessageData](../Butter-Omnichain-Service-explain.md) here.
+
+### data example
+
+| parameter | data                                                                   |                                                                          |
+|-----------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| toChain   | `1360104473493506`                                                     | TON Testnet chain id                                                     |
+| relay     | `0`                                                                    |                                                                          |
+| msgType   | `1`                                                                    | Message                                                                  |
+| target | `0x012bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` | The raw address of <br> `UQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5cHA` |
+| gasLimit  | 300000                                                                 |                                                                          |
+| payload   | `0x96a296d224f285c6...`                                                |                                                                          |
+
+
 ### Execute on Ton Network
 
 On ton network, will send an `execute` message to the target contract.
