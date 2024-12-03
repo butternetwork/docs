@@ -6,7 +6,7 @@ Check [Contract](../deployed-omnichain-contracts.md) here.
 
 ### Ton Testnet contract
 
-`EQDbjXKGrcvjya4mo1IWc821p6Pt0_Hdv0GYsyI-sbDUNQVe`
+`EQBd_ou3bphIB0mcuxFmxqaEMsuHHzj3EipM-GejjWfcaeuu`
 
 ## Ton Network message out
 
