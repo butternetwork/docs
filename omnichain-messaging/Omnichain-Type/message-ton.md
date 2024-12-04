@@ -19,7 +19,7 @@ cell body = begin_cell()
         .store_uint(0x136a3529, 32) ;; op::message_out
         .store_uint(0, 64) ;; queryId
         .store_uint(0, 8) ;; relay, 0 or 1
-        .store_uint(0, 8) ;; msgType, 0 for message or 1 for calldata
+        .store_uint(0, 8) ;; msgType, 1 for message
         .store_uint(56, 64) ;; toChain, eg. 56 for bnb
         .storeAddress(<initiator_address>) ;; initiator
         .store_slice(<target>) ;; target address
@@ -45,15 +45,15 @@ cell msg = begin_cell()
 
 ### data example
 
-| parameter | data                                                                   |                                                                          |
-|-----------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| relay     | `0`                                                                    |                                                                          |
-| msgType   | `1`                                                                    |                                                                          |
-| toChain   | `11155111`                                                             | Sepolia chain id                                                         |
-| initiator | `0x01f723e983d1cfc0da138b9046e03ca500dbe8a23e12b960c415ad423615180ecb` | The raw address of <br> `EQD3I-mD0c_A2hOLkEbgPKUA2-iiPhK5YMQVrUI2FRgOy4LB` |
-| target    | `0x8c8afd3ff50c4D8e0323815b29E510a77D2c41fd`                           | Executor contract on Sepolia                                             |
-| gasLimit  | 300000                                                                 |                                                                          |
-| payload   | `0x96a296d224f285c6...`                                                |                                                                          |
+| parameter | data                                                                   |                                                                                                                                               |
+|-----------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| relay     | `0`                                                                    |                                                                                                                                               |
+| msgType   | `1`                                                                    | MESSAGE                                                                                                                                       |
+| toChain   | `11155111`                                                             | Sepolia chain id                                                                                                                              |
+| initiator | `0x00f723e983d1cfc0da138b9046e03ca500dbe8a23e12b960c415ad423615180ecb` | The raw address `0:f723e983d1cfc0da138b9046e03ca500dbe8a23e12b960c415ad423615180ecb` of <br> `EQD3I-mD0c_A2hOLkEbgPKUA2-iiPhK5YMQVrUI2FRgOy4LB` |
+| target    | `0x8c8afd3ff50c4D8e0323815b29E510a77D2c41fd`                           | Executor contract on Sepolia                                                                                                                  |
+| gasLimit  | 300000                                                                 |                                                                                                                                               |
+| payload   | `0x96a296d224f285c6...`                                                |                                                                                                                                               |
 
 
 
@@ -80,14 +80,14 @@ And check [MessageData](../Butter-Omnichain-Service-explain.md) here.
 
 ### data example
 
-| parameter | data                                                                   |                                                                          |
-|-----------|------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| toChain   | `1360104473493506`                                                     | TON Testnet chain id                                                     |
-| relay     | `0`                                                                    |                                                                          |
-| msgType   | `1`                                                                    | Message                                                                  |
-| target | `0x012bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` | The raw address of <br> `UQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5cHA` |
-| gasLimit  | 300000                                                                 |                                                                          |
-| payload   | `0x96a296d224f285c6...`                                                |                                                                          |
+| parameter | data                                                                   |                                                                                                                                                 |
+|-----------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| toChain   | `1360104473493506`                                                     | TON Testnet chain id                                                                                                                            |
+| relay     | `0`                                                                    |                                                                                                                                                 |
+| msgType   | `1`                                                                    | MESSAGE                                                                                                                                         |
+| target | `0x002bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` | The raw address `0:2bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` of <br> `UQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5cHA` |
+| gasLimit  | 300000                                                                 |                                                                                                                                                 |
+| payload   | `0x96a296d224f285c6...`                                                |                                                                                                                                                 |
 
 
 ### Execute on Ton Network
