@@ -6,7 +6,7 @@ Check [Contract](../deployed-omnichain-contracts.md) here.
 
 ### Ton Testnet contract
 
-`EQBd_ou3bphIB0mcuxFmxqaEMsuHHzj3EipM-GejjWfcaeuu`
+`kQDJdptC1nHSC9XUR2q5fSFIY8hAHqZYqfoZRF01Y6joXYfJ`
 
 ## Ton Network message out
 
@@ -80,14 +80,14 @@ And check [MessageData](../Butter-Omnichain-Service-explain.md) here.
 
 ### data example
 
-| parameter | data                                                                   |                                                                                                                                                 |
-|-----------|------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| toChain   | `1360104473493506`                                                     | TON Testnet chain id                                                                                                                            |
-| relay     | `0`                                                                    |                                                                                                                                                 |
-| msgType   | `1`                                                                    | MESSAGE                                                                                                                                         |
+| parameter | data                                                                   |                                                                                                                                                |
+|-----------|------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| toChain   | `1360104473493506`                                                     | TON Testnet chain id                                                                                                                           |
+| relay     | `0`                                                                    |                                                                                                                                                |
+| msgType   | `1`                                                                    | MESSAGE                                                                                                                                        |
 | target | `0x002bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` | The raw address `0:2bffbd154f9e738634d618e0c8f4928531e3f85c475fc934461f2ccf18bfe5e5` of <br> `UQAr_70VT55zhjTWGODI9JKFMeP4XEdfyTRGHyzPGL_l5cHA` |
-| gasLimit  | 300000                                                                 |                                                                                                                                                 |
-| payload   | `0x96a296d224f285c6...`                                                |                                                                                                                                                 |
+| gasLimit  | 50000000                                                               | send 0.05 TON as gas fee                                                                                                                   |
+| payload   | `0x96a296d224f285c6...`                                                |                                                                                                                                                |
 
 
 ### Execute on Ton Network

@@ -34,7 +34,7 @@ The Butter Omni-chain Service contracts are deployed on following connected chai
 | BNB Chain Testnet | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://testnet.bscscan.com/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 97       |
 | Arbitrum Sepolia  | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://sepolia.arbiscan.io/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 421614   |
 | DODO Testnet      | [0x800031F0f47e0D4Aaed6e0d2505596447395f848](https://testnet-scan.dodochain.com/address/0x800031F0f47e0D4Aaed6e0d2505596447395f848)    | 53457    |
-| Ton Testnet       | [EQBd_ou3bphIB0mcuxFmxqaEMsuHHzj3EipM-GejjWfcaeuu](https://testnet.tonscan.org/address/EQBd_ou3bphIB0mcuxFmxqaEMsuHHzj3EipM-GejjWfcaeuu)    | 1360104473493506    |
+| Ton Testnet       | [kQDJdptC1nHSC9XUR2q5fSFIY8hAHqZYqfoZRF01Y6joXYfJ](https://testnet.tonscan.org/address/kQDJdptC1nHSC9XUR2q5fSFIY8hAHqZYqfoZRF01Y6joXYfJ)    | 1360104473493506    |
 
 
 
