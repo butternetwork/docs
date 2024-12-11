@@ -92,7 +92,7 @@ And check [MessageData](../Butter-Omnichain-Service-explain.md) here.
 
 ### Execute on Ton Network
 
-On ton network, will send an `execute` message to the target contract.
+On ton network, will send an `mapo_execute(0xa5b6af5b)` message to the target contract.
 
 ```
 begin_cell()
