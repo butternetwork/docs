@@ -33,50 +33,36 @@
 | - chainName      | String     | Chain name.                                                                                |
 | - scanUrl        | String     | Explorer Url.                                                                              |
 | - chainImg       | String     | Chain Icon Url.                                                                            |
-| relayerChain     | JSONObject | Relayer Chain Info.                                                                        |
-| - chainId        | String     | Chain Id.                                                                                  |
-| - chainName      | String     | Chain name.                                                                                |
-| - scanUrl        | String     | Explorer Url.                                                                              |
-| - chainImg       | String     | Chain Icon Url.                                                                            |
+| fromToken      | JSONObject | Source Token Info.                                                                         |
+| - chainId        | BigInteger | Chain Id.                                                                                  |
+| - address        | String     | Token address.                                                                             |
+| - name           | String     | Token name.                                                                                |
+| - symbol         | String     | Token symbol.                                                                              |
+| - decimal        | Integer    | Token decimal.                                                                             |
+| - icon           | String     | Token icon url.                                                                            |
+| sourceAddress    | String     | Cross address.                                                                             |
+| amount           | String     | Cross amount.                                                                              |
+| sourceHash       | String     | Source Chain Transaction Hash.                                                             |
 | toChain          | JSONObject | Destination Chain Info.                                                                    |
 | - chainId        | String     | Chain Id.                                                                                  |
 | - chainName      | String     | Chain name.                                                                                |
 | - scanUrl        | String     | Explorer Url.                                                                              |
 | - chainImg       | String     | Chain Icon Url.                                                                            |
-| tokenAddress     | String     | Source Token Address.                                                                      |
-| tokenSymbol      | String     | Source Token Symbol.                                                                       |
-| timestamp        | String     | Source Transfer Time.                                                                      |
-| completeTime     | String     | Cross chain completion time.                                                               |
-| amount           | decimal    | Cross amount.                                                                              |
-| inAmount         | decimal    | Receive amount.                                                                            |
-| fee              | decimal    | Fee amount.                                                                                |
-| state            | Integer    | Cross state, 0: crossing, 1: completed                                                     |
-| sourceHash       | String     | Source Chain Transaction Hash.                                                             |
-| relayerHash      | String     | Relayer Chain Transaction Hash, null if no relay chain is required                         |
 | toHash           | String     | Destination Chain Transaction Hash，When not completed, the destination chain hash is null. |
-| sourceAddress    | String     | Cross address.                                                                             |
+| receiveToken     | JSONObject | Destination Token Info.                                                                    |
+| - chainId        | BigInteger | Chain Id.                                                                                  |
+| - address        | String     | Token address.                                                                             |
+| - name           | String     | Token name.                                                                                |
+| - symbol         | String     | Token symbol.                                                                              |
+| - decimal        | Integer    | Token decimal.                                                                             |
+| - icon           | String     | Token icon url.                                                                            |
+| receiveAmount    | String     | Receive amount.                                                                            |
 | toAddress        | String     | Receive address.                                                                           |
-| sourceToken      | JSONObject | Source Token Info.                                                                         |
-| - chainId        | BigInteger | Chain Id.                                                                                  |
-| - address        | String     | Token address.                                                                             |
-| - name           | String     | Token name.                                                                                |
-| - symbol         | String     | Token symbol.                                                                              |
-| - decimal        | Integer    | Token decimal.                                                                             |
-| - icon           | String     | Token icon url.                                                                            |
-| destinationToken | JSONObject | Destination Token Info.                                                                    |
-| - chainId        | BigInteger | Chain Id.                                                                                  |
-| - address        | String     | Token address.                                                                             |
-| - name           | String     | Token name.                                                                                |
-| - symbol         | String     | Token symbol.                                                                              |
-| - decimal        | Integer    | Token decimal.                                                                             |
-| - icon           | String     | Token icon url.                                                                            |
-| feeToken         | JSONObject | Fee Token Info.                                                                            |
-| - chainId        | BigInteger | Chain Id.                                                                                  |
-| - address        | String     | Token address.                                                                             |
-| - name           | String     | Token name.                                                                                |
-| - symbol         | String     | Token symbol.                                                                              |
-| - decimal        | Integer    | Token decimal.                                                                             |
-| - icon           | String     | Token icon url.                                                                            |
+| state            | Integer    | Cross state, 0: crossing, 1: completed                                                     |
+| timestamp        | String     | Source Transfer Time.                                                                      |
+| timestampLong    | Long       | Cross chain completion timestamp.                                                               |
+| completeTime     | String     | Cross chain completion time.                                                               |
+| completeTimeLong | Long       | Cross chain completion timestamp.                                                               |
 
 > Response Examples
 
@@ -95,13 +81,6 @@
         "scanUrl": "https://bscscan.com/",
         "chainImg": "https://files.maplabs.io/bridge/bsc.png"
       },
-      "relayerChain": {
-        "id": 1,
-        "chainId": "22776",
-        "chainName": "MAP Relayer Chain",
-        "scanUrl": "https://mapscan.io/",
-        "chainImg": "https://cdn.befiwalletdao.com/image/icon_local_map_checked_3gfyyv.png"
-      },
       "toChain": {
         "id": 1,
         "chainId": "22776",
@@ -109,20 +88,17 @@
         "scanUrl": "https://mapscan.io/",
         "chainImg": "https://cdn.befiwalletdao.com/image/icon_local_map_checked_3gfyyv.png"
       },
-      "tokenAddress": "0x55d398326f99059fF775485246999027B3197955",
-      "tokenSymbol": "USDT",
+      "sourceAddress": "0x55d398326f99059fF775485246999027B3197955",
+      "amount": "0.800000",
       "timestamp": "2023-07-27T12:21:22.000+00:00",
       "completeTime": "2023-07-27T12:23:58.000+00:00",
-      "amount": 793.9679079533888,
-      "inAmount": 793.1739400454354,
-      "fee": "0.793967907953388772USDT",
+      "receiveAmount": "0.598400",
+      "timestampLong": 1734345036000,
       "state": 1,
-      "sourceHash": "0xfa26d7abef03d57a938b675a46e9fb2edc15003cf50c99c73eeac2de0183d166",
-      "relayerHash": null,
-      "toHash": "0xf56080d26a008eaecba32e3f99ee38016554cc0ba2a20127b24b81b33dc0d36a",
-      "sourceAddress": "0xecef0d873d909730da0f446d3afac15ef19b45b1",
-      "toAddress": "0xa06e0f8851438115628c5780480c53017d405e4e",
-      "fromTokenDecimal": 18,
+      "sourceHash": "0x9b898a22e55cb6be8f4411217e486b1ef7343426bf63e35689745a8ce8a91816",
+      "toHash": "0xaac6b9f9b67ebbff9dc9636be4b62051b3527329b09a9f1311a4562a840d98ee",
+      "toAddress": "0x386ce1a187ec7329cfb8e467eb02fb07c698256a",
+      "completeTimeLong": 1734345105000,
       "sourceToken": {
         "id": 37,
         "chainId": 56,
@@ -134,16 +110,6 @@
         "isMainCurrency": 0
       },
       "destinationToken": {
-        "id": 36,
-        "chainId": 22776,
-        "address": "0x33daba9618a75a7aff103e53afe530fbacf4a3dd",
-        "name": "USDT",
-        "symbol": "USDT",
-        "icon": null,
-        "decimal": 18,
-        "isMainCurrency": 0
-      },
-      "feeToken": {
         "id": 36,
         "chainId": 22776,
         "address": "0x33daba9618a75a7aff103e53afe530fbacf4a3dd",
