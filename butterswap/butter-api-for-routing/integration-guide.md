@@ -41,15 +41,23 @@ https://bs-router-v3.chainservice.io/supportedChainList
   "errno": 0,
   "message": "success",
   "data": [
-    1,
-    137,
-    56,
-    22776,
-    728126428,
-    4200,
-    2649,
-    8453,
-    81457
+     1,
+     137,
+     56,
+     22776,
+     728126428,
+     4200,
+     2649,
+     8453,
+     81457,
+     324,
+     5000,
+     59144,
+     42161,
+     10,
+     1360108768460801,
+     1360104473493505,
+     "313230561203979757"
   ]
 }
 ```
@@ -62,9 +70,16 @@ ChainId explanation:
 * 22776: Map Protocol
 * 728126428: Tron
 * 4200: Arbitrum
-* 2649: AILayer
 * 8453: Base
 * 81457: Blast
+* 324: zkSync
+* 5000: Mantle
+* 59144: Linea
+* 42161: Arbitrum One
+* 10: OP Mainnet
+* 1360108768460801: Solana Mainnet
+* 1360104473493505: TON
+* 313230561203979757: BTC
 
 ### 2. Find Token Information
 
