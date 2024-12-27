@@ -62,6 +62,18 @@
 
 * [🫂 User Guide](butterswap/user-guide.md)
 
+## Butter Swap SDK
+
+* [Install](sdk/install.md)
+* [Config SDK](sdk/2.configure-sdk.md)
+* [Reqeust Routes](sdk/3.request-routes.md)
+* [Execute Route](sdk/4.execute-route.md)
+* [Others](sdk/5.others.md)
+
+## Butter Swap Widget
+
+* [Usage](widget/usage.md)
+
 ## 📢 Resources
 
 * [🏠 Website](https://www.butternetwork.io/)
