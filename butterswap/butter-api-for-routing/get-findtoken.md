@@ -2,25 +2,29 @@
 
 GET find the token information by the given address
 
-#### Params
 
-| Name    | Location | Type   | Required | Description |
-| ------- | -------- | ------ | -------- | ----------- |
-| address | query    | string | yes      | none        |
+### Request Parameters
 
-#### Responses
+|Name|Location|Type|Required| Description         |
+|---|---|---|---|---------------------|
+|address|query|string| yes | token address       |
 
-| HTTP Status Code | Meaning                                                 | Description | Data schema |
-| ---------------- | ------------------------------------------------------- | ----------- | ----------- |
-| 200              | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | Success     | Inline      |
+### Responses Structure
 
-#### Request Example
+| Field             | Type    | Description                                                                                                      |
+|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data              | array   | An array of token information with the requested address on supported blockchains.                               |
+
+
+### Request Example
 
 ```bash
 GET /findToken?address=0x13CB04d4a5Dfb6398Fc5AB005a6c84337256eE23
 ```
 
-#### Response Examples
+### Response Examples
 
 > 200 Response
 

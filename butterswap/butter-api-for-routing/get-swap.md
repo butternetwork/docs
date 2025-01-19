@@ -2,7 +2,7 @@
 
 GET generated swap transaction calldata to swap in Butter router
 
-#### Params
+### Request Parameters
 
 | Name       | Location | Type   | Required | Description                                                                                                                                                        |
 |------------| -------- | ------ | -------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -20,11 +20,29 @@ GET generated swap transaction calldata to swap in Butter router
 GET /swap?hash=0x286081342b93d276381a8cf4b43990e3a522fb25d0c50c3467dce7ff4543c92c&slippage=100&from=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9&receiver=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9
 ```
 
-### **Responses**
+### Responses Structure
 
-| HTTP Status Code | Meaning                                                 | Description | Data schema |
-| ---------------- | ------------------------------------------------------- | ----------- | ----------- |
-| 200              | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | Success     | Inline      |
+The response contains the following fields:
+
+| Field             | Type    | Description                                                                                                      |
+|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data              | array   | Contains data on the swap transaction details.                                                                   |
+
+### `data` Field
+
+The `data` field contains an array with one or more transactions data on source blockchain. Each item has the following fields:
+
+| Field              | Type    | Description                                                                      |
+|--------------------|---------|----------------------------------------------------------------------------------|
+| to                 | string  | The account address which the user interacts with on source chain.               |
+| data               | string  | The encoded transaction data. This field is optional for some blockchains.       |
+| value              | string  | The native token amount to be transferred to the 'to' address.                   |
+| chainId            | string  | Source chain Id.                                                                 |
+| method             | string  | The contract method the user calls. This field is optional for some blockchains. |
+| args               | array   | The detailed arguments information of the method, including type and value.      |
+
 
 #### Response Examples
 
@@ -94,7 +112,3 @@ GET /swap?hash=0x286081342b93d276381a8cf4b43990e3a522fb25d0c50c3467dce7ff4543c92
 ```
 
 **Note**: error code can be found in [here](error-code-list.md)
-
-
-
-**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**

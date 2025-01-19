@@ -2,7 +2,7 @@
 
 GET get best routes and generate swap transaction calldata to swap in Butter router
 
-### **Params**
+### Request Parameters
 
 
 | Name | Location | Type | Required | Description                                                                                                                                                                    |
@@ -29,14 +29,26 @@ GET get best routes and generate swap transaction calldata to swap in Butter rou
 GET /routeAndSwap?fromChainId=1&toChainId=56&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x0000000000000000000000000000000000000000&type=exactIn&slippage=150&entrance=<entrance>&from=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9&receiver=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9
 ```
 
-### **Responses**
+### Responses Structure
+The response contains the following fields:
 
-| HTTP Status Code | Meaning                                                 | Description | Data schema |
-| ---------------- | ------------------------------------------------------- | ----------- | ----------- |
-| 200              | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | Success     | Inline      |
+| Field             | Type    | Description                                                                                                      |
+|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data              | array   | Contains data on the swap route path, fees, etc.                                                                 |
+
+#### `data` Field
+
+The `data` field contains an array with one or more route and swap data. Each item has the following fields:
+
+| Field   | Type   | Description                                                                            |
+|---------|--------|----------------------------------------------------------------------------------------|
+| route   | object | The detailed route information, please refer to [route](get-route.md) API for details. |
+| txParam | object | The swap transaction information, please refer to [swap](get-swap.md) API for details. |
 
 
-#### Response Examples
+### Response Examples
 
 1. get best routes and swap transaction calldata successfully
 
@@ -471,6 +483,3 @@ GET /routeAndSwap?fromChainId=1&toChainId=56&amount=1&tokenInAddress=0x000000000
 ```
 
 **Note**: error code can be found in [here](error-code-list.md)
-
-
-**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**

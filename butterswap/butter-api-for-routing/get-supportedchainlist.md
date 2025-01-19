@@ -2,19 +2,26 @@
 
 GET get chain id list that Butter Router supports
 
-#### Responses
+### Request Parameters
+None
 
-| HTTP Status Code | Meaning                                                 | Description | Data schema |
-| ---------------- | ------------------------------------------------------- | ----------- | ----------- |
-| 200              | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | Success     | Inline      |
+### Responses Structure
+The response contains the following fields:
 
-#### Request Example
+| Field             | Type    | Description                                                                                                      |
+|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data              | array   | An array of the supported blockchain Ids.                                                                        |
+
+
+### Request Example
 
 ```
 GET /supportedChainList
 ```
 
-#### Response Examples
+### Response Examples
 
 > 200 Response
 
@@ -39,7 +46,7 @@ GET /supportedChainList
     10,
     1360108768460801,
     1360104473493505,
-    "313230561203979757"
+    1360095883558913
   ]
 }
 ```
@@ -64,7 +71,7 @@ GET /supportedChainList
 | 10       | OP Mainnet              |
 | 1360108768460801       | Solana Mainnet          |
 | 1360104473493505       | TON                     |
-| 313230561203979757       | BTC                     |
+| 1360095883558913       | BTC                     |
 
 
 
