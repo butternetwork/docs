@@ -3,7 +3,7 @@
 GET get routes from 'tokenIn' to 'tokenOut', support both cross chain and same chain
 
 
-### **Params**
+### Request Parameters
 
 | Name            |Location|Type| Required | Description                                                                                                                            |
 |-----------------|---|---|----------|----------------------------------------------------------------------------------------------------------------------------------------|
@@ -21,25 +21,94 @@ GET get routes from 'tokenIn' to 'tokenOut', support both cross chain and same c
 | rateOrNativeFee |query|string| no       | if fee type is "0", this is the fixed fee amount in native token, if fee type is "1", this is the proportion fee rate. This field is valid only when entrance is not provided' |
 | caller          | query          | string | no       | caller of butter router contract, e.g., the smart contract address who calls butter rotuer, or the user account who directly calls butter router |
 
-#### Request Example
+### Request Example
 
 ```bash
 GET /route?fromChainId=56&toChainId=137&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x0000000000000000000000000000000000000000&type=exactIn&slippage=150&entrance=<entrance>
 ```
 
-### **Responses**
+### Responses Structure
 
-| HTTP Status Code | Meaning                                                 | Description | Data schema |
-| ---------------- | ------------------------------------------------------- | ----------- | ----------- |
-| 200              | [OK](https://tools.ietf.org/html/rfc7231#section-6.3.1) | Sucess      | Inline      |
+The response contains the following fields:
+
+| Field             | Type    | Description                                                                                                      |
+|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
+| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data              | array   | Contains data on the swap route path, fees, etc.                                                                 |
 
 
-#### Response Examples
+#### `data` Field
 
-1. get route successfully
+The `data` field contains an array with one or more routes. Each route has the following fields:
 
-* Note: the 'hasLiquidty' field indicates whether there is enough liquidity for the swap
+| Field             | Type    | Description                                                                                          |
+|-------------------|---------|------------------------------------------------------------------------------------------------------|
+| diff              | string  | The percentage difference of the amount out compare to the best route.                               |
+| bridgeFee         | object  | Details of the bridge fee which is charged by butter protocol.                                       |
+| tradeType         | number  | Trade type. `0` means 'exactIn', `1` means 'exactOut'.                                               |
+| gasFee            | object  | Estimated gas fee that the user pays for the transaciton on source blockchain.                       |
+| swapFee           | object  | The referral fee payed to referrer.                                                                  |
+| feeConfig         | object  | Configuration for fees, including referrer and fee type.                                             |
+| gasEstimated      | string  | Estimated gas of the source chain transaction (in gas).                                              |
+| gasEstimatedTarget| string  | Estimated gas of the destination chain transaction (in gas).                                         |
+| timeEstimated     | number  | Estimated time for the cross chain transaction (in seconds).                                         |
+| hash              | string  | Route hash.                                                                                          |
+| entrance          | string  | Indicates where the request is from.                                                                 |
+| timestamp         | number  | The time at which the request occurred                                                               |
+| hasLiquidity      | boolean | Whether liquidity is available for the route path.                                                   |
+| srcChain          | object  | Route information on source chain.                                                                   |
+| bridgeChain       | object  | Route information on bridge chain. The field is not returned if it's a single chain swap route.      |
+| dstChain          | object  | Route information on destination chain. The field is not returned if it's a single chain swap route. |
+| totalAmountInUSD  | string  | Total input amount in USD.  This is an optional field.                                               |
+| totalAmountOutUSD | string  | Total output amount in USD. This is an optional field.                                               |
+| contract          | string  | The contract which the user interacts with on source chain.   This is an optional field.             |
+| minAmountOut      | object  | Minimum output amount considering the slippage, with the amount and symbol of the destination token. |
 
+#### Detailed Explanation of Key Fields
+
+##### `bridgeFee` Field
+
+- `amount`: The fee amount for using the bridge.
+- `symbol`: The symbol of the fee token (e.g., `USDT`).
+- `address`: The contract address for the fee token.
+- `chainId`: The chain ID where the fee is paid.
+- `in`: The input token details (contract address, name, symbol, etc.).
+- `out`: The output token details (contract address, name, symbol, etc.).
+
+##### `gasFee` Field
+
+- `amount`: The estimated gas fee in native token.
+- `symbol`: The symbol of the gas fee token (e.g., `BNB`).
+- `inUSD`: The gas fee in USD.
+
+##### `swapFee` Field
+
+- `nativeFee`: The native fee for the transaction.
+- `tokenFee`: The fee in the token being exchanged.
+
+##### `feeConfig` Field
+
+- `feeType`: The fee type, 0 for fixed, 1 for proportional.
+- `referrer`: The referrer address.
+- `rateOrNativeFee`: The fee percentage if feeType is proportional or amount if fixed.
+
+##### `srcChain`, `bridgeChain`, and `dstChain` Fields
+
+- `chainId`: The ID of the source, bridge, or destination chain.
+- `tokenIn` and `tokenOut`: Token details, including contract address, symbol, name, decimals, and icon.
+- `totalAmountIn` and `totalAmountOut`: The total amount of tokens being exchanged.
+- `route`: The trade route details, including the exchange and token path used.
+
+##### `minAmountOut` Field
+
+- `amount`: The minimum amount of the output token you can expect from the transaction considering the slippage.
+- `symbol`: The symbol of the output token.
+
+
+### Response Examples
+
+1.  get route successfully
 > 200 Response
 
 ```json
@@ -362,18 +431,14 @@ GET /route?fromChainId=56&toChainId=137&amount=1&tokenInAddress=0x00000000000000
 }
 ```
 
-2. no route found or other error
-
+2. no route found
 > 200 Response
 
-```
+```json
 {
-    "errno": <error code>,
-    "message": <detailed error message>
+    "errno": 2003,
+    "message": "No Route Found"
 }
 ```
 
 **Note**: error code can be found in [here](error-code-list.md)
-
-
-**Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**
