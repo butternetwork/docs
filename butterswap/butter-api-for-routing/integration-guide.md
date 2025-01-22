@@ -57,7 +57,7 @@ https://bs-router-v3.chainservice.io/supportedChainList
      10,
      1360108768460801,
      1360104473493505,
-     "313230561203979757"
+     1360095883558913
   ]
 }
 ```
@@ -79,7 +79,7 @@ ChainId explanation:
 * 10: OP Mainnet
 * 1360108768460801: Solana Mainnet
 * 1360104473493505: TON
-* 313230561203979757: BTC
+* 1360095883558913: BTC
 
 ### 2. Find Token Information
 
