@@ -35,6 +35,7 @@ GET /supportedChainList
     56,
     22776,
     728126428,
+    8217,
     4200,
     2649,
     8453,
@@ -53,25 +54,26 @@ GET /supportedChainList
 
 #### Butter Chain ID explanation
 
-| Chain Id        | Blockchain Name         |
-|-----------------|-------------------------|
-| 1        | Ethereum                |
-| 137      | Polygon Mainnet         |
-| 56       | BNB Smart Chain Mainnet |
-| 22776    | MAP Protocol            |
-| 728126428| Tron                    |
-| 4200     | Merlin Mainnet          |
-| 2649     | AILayer                 |
-| 8453     | Base                    |
-| 81457    | Blast                   |
-| 324      | zkSync Mainnet          |
-| 5000     | Mantle                  |
-| 59144    | Linea                   |
-| 42161    | Arbitrum One            |
-| 10       | OP Mainnet              |
-| 1360108768460801       | Solana Mainnet          |
-| 1360104473493505       | TON                     |
-| 1360095883558913       | BTC                     |
+| Chain Id         | Blockchain Name         |
+|------------------|-------------------------|
+| 1                | Ethereum                |
+| 137              | Polygon Mainnet         |
+| 56               | BNB Smart Chain Mainnet |
+| 22776            | MAP Protocol            |
+| 728126428        | Tron                    |
+| 8217             | Kaia                    |
+| 4200             | Merlin Mainnet          |
+| 2649             | AILayer                 |
+| 8453             | Base                    |
+| 81457            | Blast                   |
+| 324              | zkSync Mainnet          |
+| 5000             | Mantle                  |
+| 59144            | Linea                   |
+| 42161            | Arbitrum One            |
+| 10               | OP Mainnet              |
+| 1360108768460801 | Solana Mainnet          |
+| 1360104473493505 | TON                     |
+| 1360095883558913 | BTC                     |
 
 
 
