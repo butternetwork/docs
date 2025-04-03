@@ -66,7 +66,7 @@
 
 * [Install](sdk/install.md)
 * [Config SDK](sdk/2.configure-sdk.md)
-* [Reqeust Routes](sdk/3.request-routes.md)
+* [Request Routes](sdk/3.request-routes.md)
 * [Execute Route](sdk/4.execute-route.md)
 * [Others](sdk/5.others.md)
 
