@@ -39,7 +39,7 @@
 
 * [Introduction](butterswap/introduction.md)
 * [Integration Guide](butterswap/butter-api-for-routing/integration-guide.md)
-  * [Cotract Interface](butterswap/router-interface.md)
+  * [Contract Interface](butterswap/router-interface.md)
   * [Fee](butterswap/swap-fee.md)
 * [Deployed Contracts](butterswap/deployed-contracts-v3.0.md)
   * [v2.1](butterswap/deployed-contracts-v2.1.md)
