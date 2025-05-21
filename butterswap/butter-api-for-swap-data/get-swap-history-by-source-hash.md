@@ -58,7 +58,7 @@
 | - icon           | String     | Token icon url.                                                                            |
 | receiveAmount    | String     | Receive amount.                                                                            |
 | toAddress        | String     | Receive address.                                                                           |
-| state            | Integer    | Cross state, 0: crossing, 1: completed                                                     |
+| state            | Integer    | Cross state, 0: crossing, 1: completed，6：Refund                                                      |
 | timestamp        | String     | Source Transfer Time.                                                                      |
 | timestampLong    | Long       | Cross chain completion timestamp.                                                               |
 | completeTime     | String     | Cross chain completion time.                                                               |
