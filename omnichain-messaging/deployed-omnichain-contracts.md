@@ -4,6 +4,33 @@ The Butter Omni-chain Service contracts are deployed on following connected chai
 
 ## Mainnet
 
+
+### v3.1
+
+
+| **Chain Name**  | **Butter Omnichain Service Address**       | Chain ID  |
+|-----------------|--------------------------------------------|-----------|
+| MAP Relay Chain | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 22776     |
+| Ethereum        | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 1         |
+| BNB Chain       | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 56        |
+| Base            | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 8453      |
+| Arbitrum        | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 42161     |
+| Optimism        | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 10        |
+| Polygon         | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 137       |
+| zkSync          | 0xdeF84C4B412361E3A98A5277C108D7F0Df02fA3d | 324       |
+| Tron            | TXsDYB9ovFEFg4cja6gn1t1tpmrnSbYhHA | 728126428 |
+| Klaytn          | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 8217      |
+| Conflux         | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 1030      |
+| Merlin          | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 4200      |
+| Blast           | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 81457     |
+| Mantle          | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 5000      |
+| Linea           | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 59144     |
+| Scroll          | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 534352    |
+| AILayer         | 0x0000317Bec33Af037b5fAb2028f52d14658F6A56 | 2649      |
+
+
+### v3.0 (deprecated)
+
 | **Chain Name**  | **Butter Omnichain Service Address**       | Chain ID  |
 |-----------------|--------------------------------------------| --------- |
 | MAP Relay Chain | 0x000030fB6c4701389B05F124F6fFd4C862CF1eF9 | 22776     |
