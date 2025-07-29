@@ -29,8 +29,8 @@ The omnichain contracts are deployed on following connected chains, functions ar
 | Mapo Relay chain | 22776            | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://www.maposcan.io/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)          |
 | Ethereum         | 1                | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://etherscan.io/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)             |
 | BNB Chain        | 56               | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://bscscan.com/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)              |
-| Tron             | 728126428        | [TXsDYB9ovFEFg4cja6gn1t1tpmrnSbYhHA](https://solscan.io/account/AGwu8gfXJshkB9UMM3eexeq26m7zf8wM1FgNdBt5wkqN)                          |
-| Solana           | 1360108768460801        | [AGwu8gfXJshkB9UMM3eexeq26m7zf8wM1FgNdBt5wkqN](https://tronscan.org/#/contract/AGwu8gfXJshkB9UMM3eexeq26m7zf8wM1FgNdBt5wkqN)                          |
+| Tron             | 728126428        | [TXsDYB9ovFEFg4cja6gn1t1tpmrnSbYhHA](https://tronscan.org/#/contract/TXsDYB9ovFEFg4cja6gn1t1tpmrnSbYhHA)                          |
+| Solana           | 1360108768460801        | [AGwu8gfXJshkB9UMM3eexeq26m7zf8wM1FgNdBt5wkqN](https://solscan.io/account/AGwu8gfXJshkB9UMM3eexeq26m7zf8wM1FgNdBt5wkqN)                          |
 | Polygon          | 137              | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://polygonscan.com/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)          |
 | Arbitrum         | 42161            | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://arbiscan.io/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)              |
 | Optimism         | 10               | [0x0000317Bec33Af037b5fAb2028f52d14658F6A56](https://optimistic.etherscan.io/address/0x0000317Bec33Af037b5fAb2028f52d14658F6A56)  |
@@ -66,4 +66,5 @@ The omnichain contracts are deployed on following connected chains, functions ar
 | Conflux          | 1030             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://evm.confluxscan.io/address/0xfeb2b97e4efce787c08086dc16ab69e063911380)       |
 | AILayer          | 2649             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://mainnet-explorer.anvm.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380) |
 | Klaytn           | 8217             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://klaytnscope.com/account/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)          |
+| Solana           | 1360108768460801        | [87GVY9PJsvDZX3vr3tpAXfzU3nTVfHy5nEKmThLdaMEK](https://solscan.io/account/87GVY9PJsvDZX3vr3tpAXfzU3nTVfHy5nEKmThLdaMEK)                          |
 | Near             | 1360100178526209 | [mosv21.mfac.butternetwork.near](https://nearblocks.io/zh-cn/address/mosv21.mfac.butternetwork.near)                              |
