@@ -66,5 +66,5 @@ The omnichain contracts are deployed on following connected chains, functions ar
 | Conflux          | 1030             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://evm.confluxscan.io/address/0xfeb2b97e4efce787c08086dc16ab69e063911380)       |
 | AILayer          | 2649             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://mainnet-explorer.anvm.io/address/0xfeB2b97e4Efce787c08086dC16Ab69E063911380) |
 | Klaytn           | 8217             | [0xfeB2b97e4Efce787c08086dC16Ab69E063911380](https://klaytnscope.com/account/0xfeB2b97e4Efce787c08086dC16Ab69E063911380)          |
-| Solana           | 1360108768460801        | [87GVY9PJsvDZX3vr3tpAXfzU3nTVfHy5nEKmThLdaMEK](https://solscan.io/account/87GVY9PJsvDZX3vr3tpAXfzU3nTVfHy5nEKmThLdaMEK)                          |
+| Solana           | 1360108768460801        | [DThacbDTRJaKHJymrVAvtfMjHmdv1cTrFy4jtzPSrYcG](https://solscan.io/account/DThacbDTRJaKHJymrVAvtfMjHmdv1cTrFy4jtzPSrYcG)                          |
 | Near             | 1360100178526209 | [mosv21.mfac.butternetwork.near](https://nearblocks.io/zh-cn/address/mosv21.mfac.butternetwork.near)                              |
