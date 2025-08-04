@@ -356,3 +356,108 @@ https://bs-router-v3.chainservice.io/routeAndSwap?fromChainId=1&toChainId=56&amo
   ]
 }
 ```
+
+### 6. Send swap transaction
+
+To send the swap transaction to source blockchain, you can use the information from the `/swap` or `/routeAndSwap` response. Here are some examples for different blockchain networks.
+
+#### Common EVM Chains (Ethereum, BSC, Polygon, etc.)
+
+```typescript
+   const rpcUrl = '...';
+   const senderPrivateKey = '....'; // Private key in hex format
+   const receiver = '...'; // Receiver address on destination chain
+   const wallet = new ethers.Wallet(senderPrivateKey, provider);
+   const sender = wallet.address;
+
+   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
+   const gasPrice = await provider.getGasPrice();
+   const tx = {
+      to: swapData.to,
+      value: swapData.value,
+      data: swapData.data,
+      gasPrice: gasPrice,
+   };
+   
+   const estimatedGas = await wallet.estimateGas(tx);
+   const txWithGas = {
+      ...tx,
+      gasLimit: estimatedGas.mul(110).div(100),
+   };
+   const receipt = await wallet.sendTransaction(txWithGas);
+   console.log('tx hash', receipt.hash);
+```
+
+#### Tron
+
+```typescript
+   const senderPrivateKey = '....';  // Private key in hex format
+   const sender = TronWeb.address.fromPrivateKey(senderPrivateKey) as string;
+   const receiver = '0x...'; // Receiver address on destination chain
+   
+   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   const tronWeb = new TronWeb({
+      fullHost: 'https://api.trongrid.io',
+   });
+   const triggerResult = await tronWeb.transactionBuilder.triggerConstantContract(
+           swapData.to,
+           '',
+           {
+              callValue: Number(swapData.value),
+              input: swapData.data,
+           },
+           [],
+           sender
+   );
+   
+   const estimatedEnergy = Number(triggerResult.energy_used) * 1.2;
+   const energyPrices = await tronWeb.trx.getEnergyPrices();
+   const energyPricesList = energyPrices.split(',');
+   const energyPrice = energyPricesList[energyPricesList.length - 1].split(':')[1];
+   const feeLimit = Math.ceil(estimatedEnergy * Number(energyPrice));
+   
+   const tx = await tronWeb.transactionBuilder.triggerSmartContract(
+           swapData.to,
+           '',
+           {
+              callValue: Number(swapData.value),
+              input: swapData.data,
+              feeLimit: feeLimit,
+           },
+           [],
+           sender
+   );
+   const signedTx = await tronWeb.trx.sign(tx.transaction, evmPrivateKey);
+   const receipt = await tronWeb.trx.sendRawTransaction(signedTx);
+   console.log('tx hash', receipt.txid);
+```
+
+#### Solana
+
+```typescript
+   const solanaRpcUrl = '...';   
+   const senderPrivateKey = '...'; // Base58 encoded private key
+   const sender = ''; // Sender address on Solana chain
+   const receiver = ''; // Receiver address on destination chain
+   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+
+   const connection = new Connection(solanaRpcUrl);
+   const latestBlockHash = await connection.getLatestBlockhash();
+   const wallet = new Wallet(Keypair.fromSecretKey(bs58.decode(senderPrivateKey)));
+   
+   const transaction = VersionedTransaction.deserialize(Buffer.from(swapData.data, 'hex'));
+   transaction.message.recentBlockhash = latestBlockHash.blockhash;
+   
+   // Usually, the Solana wallet will add 2 instructions to set Compute Unit Price and set Compute Unit Limit.
+   // If necessary, you can run simulation transaction and add them by yourself.
+
+   transaction.sign([wallet.payer]);
+   const rawTransaction = transaction.serialize();
+   const txSig = await connection.sendRawTransaction(rawTransaction, {
+      skipPreflight: false,
+      maxRetries: 2,
+   });;
+   
+   console.log('tx signature', txSig);
+```
