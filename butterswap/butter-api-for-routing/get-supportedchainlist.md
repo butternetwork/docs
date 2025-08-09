@@ -30,24 +30,19 @@ GET /supportedChainList
   "errno": 0,
   "message": "string",
   "data": [
-    1,
-    137,
-    56,
-    22776,
-    728126428,
-    8217,
-    4200,
-    2649,
-    8453,
-    81457,
-    324,
-    5000,
-    59144,
-    42161,
-    10,
-    1360108768460801,
-    1360104473493505,
-    1360095883558913
+     1,
+     137,
+     56,
+     22776,
+     728126428,
+     2649,
+     8453,
+     59144,
+     42161,
+     10,
+     8217,
+     1360108768460801,
+     1360095883558913
   ]
 }
 ```
@@ -62,20 +57,15 @@ GET /supportedChainList
 | 22776            | MAP Protocol            |
 | 728126428        | Tron                    |
 | 8217             | Kaia                    |
-| 4200             | Merlin Mainnet          |
 | 2649             | AILayer                 |
 | 8453             | Base                    |
-| 81457            | Blast                   |
-| 324              | zkSync Mainnet          |
-| 5000             | Mantle                  |
 | 59144            | Linea                   |
 | 42161            | Arbitrum One            |
 | 10               | OP Mainnet              |
 | 1360108768460801 | Solana Mainnet          |
-| 1360104473493505 | TON                     |
 | 1360095883558913 | BTC                     |
 
 
-
+**Note**: the chain ID list may change over time as new chains are added or removed from the Butter Router's support, please request this endpoint to get the latest supported chain list.
 
 **Please find all [ButterSwap API Reference](https://bs-router-v3.chainservice.io/docs#/) here.**
