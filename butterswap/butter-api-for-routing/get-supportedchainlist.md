@@ -41,6 +41,7 @@ GET /supportedChainList
      42161,
      10,
      8217,
+     196,
      1360108768460801,
      1360095883558913
   ]
@@ -62,6 +63,7 @@ GET /supportedChainList
 | 59144            | Linea                   |
 | 42161            | Arbitrum One            |
 | 10               | OP Mainnet              |
+| 196              | X Layer Mainnet         |
 | 1360108768460801 | Solana Mainnet          |
 | 1360095883558913 | BTC                     |
 
