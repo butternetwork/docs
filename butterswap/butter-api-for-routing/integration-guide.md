@@ -6,8 +6,8 @@ Welcome to the Butter Smart Router service! This document will guide developers 
 
 Butter Smart Router service provides the following interfaces:
 
-1. Query Supported Chain List
-   * Interface: `/supportedChainList`
+1. Query Supported Chain Info List
+   * Interface: `/supportedChainInfo`
    * Description: Query the list of all supported chains by this service.
 2. Find Token Information
    * Interface: `/findToken`
@@ -24,14 +24,14 @@ Butter Smart Router service provides the following interfaces:
 
 ### Integration Steps
 
-### 1.Query Supported Chain List
+### 1.Query Supported Chain Info
 
-Use the `/supportedChainList` interface to query the list of all supported chains by this service. You will receive a list of chain identifiers.
+Use the `/supportedChainInfo` interface to query the list of all supported chains by this service. You will receive a list of blockchains' information.
 
 #### Request Url with **GET** method:
 
 ```json
-https://bs-router-v3.chainservice.io/supportedChainList
+https://bs-router-v3.chainservice.io/supportedChainInfo
 ```
 
 #### Response:
@@ -41,40 +41,81 @@ https://bs-router-v3.chainservice.io/supportedChainList
   "errno": 0,
   "message": "success",
   "data": [
-     1,
-     137,
-     56,
-     22776,
-     728126428,
-     2649,
-     8453,
-     59144,
-     42161,
-     10,
-     8217,
-     1360108768460801,
-     1360095883558913
+     {
+        "id": "1",
+        "type": "EVM",
+        "name": "Ethereum"
+     },
+     {
+        "id": "137",
+        "type": "EVM",
+        "name": "Polygon"
+     },
+     {
+        "id": "56",
+        "type": "EVM",
+        "name": "BSC"
+     },
+     {
+        "id": "22776",
+        "type": "EVM",
+        "name": "MAP"
+     },
+     {
+        "id": "728126428",
+        "type": "EVM",
+        "name": "Tron"
+     },
+     {
+        "id": "2649",
+        "type": "EVM",
+        "name": "AILayer"
+     },
+     {
+        "id": "8453",
+        "type": "EVM",
+        "name": "Base"
+     },
+     {
+        "id": "59144",
+        "type": "EVM",
+        "name": "Linea"
+     },
+     {
+        "id": "42161",
+        "type": "EVM",
+        "name": "Arbitrum"
+     },
+     {
+        "id": "10",
+        "type": "EVM",
+        "name": "Optimism"
+     },
+     {
+        "id": "8217",
+        "type": "EVM",
+        "name": "Kaia"
+     },
+     {
+        "id": "196",
+        "type": "EVM",
+        "name": "XLayer"
+     },
+     {
+        "id": "1360108768460801",
+        "type": "Solana",
+        "name": "Solana"
+     },
+     {
+        "id": "1360095883558913",
+        "type": "BTC",
+        "name": "BTC"
+     }
   ]
 }
 ```
 
-ChainId explanation:
-
-* 1: Ethereum
-* 137: Polygon
-* 56: BSC
-* 22776: Map Protocol
-* 728126428: Tron
-* 2649: AILayer
-* 8453: Base
-* 59144: Linea
-* 42161: Arbitrum One
-* 10: OP Mainnet
-* 8217: Kaia
-* 1360108768460801: Solana Mainnet
-* 1360095883558913: BTC
-
-**Note**: the chain ID list may change over time as new chains are added or removed from the Butter Router's support, please request this endpoint to get the latest supported chain list.
+**Note**: the chain info list may change over time as new chains are added or removed from the Butter Router's support, please request this endpoint to get the latest supported chain info.
 
 
 ### 2. Find Token Information
