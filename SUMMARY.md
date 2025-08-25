@@ -49,6 +49,7 @@
   * [GET /swap](butterswap/butter-api-for-routing/get-swap.md)
   * [GET /routeAndSwap](butterswap/butter-api-for-routing/get-routeandswap.md)
   * [GET /supportedChainList](butterswap/butter-api-for-routing/get-supportedchainlist.md)
+  * [GET /supportedChainInfo](butterswap/butter-api-for-routing/get-supportedchaininfo.md)
   * [GET /findToken](butterswap/butter-api-for-routing/get-findtoken.md)
   * [Error Code List](butterswap/butter-api-for-routing/error-code-list.md)
 * [API for Swap Data](butterswap/butter-api-for-swap-data/README.md)
