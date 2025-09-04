@@ -41,28 +41,28 @@ The response contains the following fields:
 
 The `data` field contains an array with one or more routes. Each route has the following fields:
 
-| Field             | Type    | Description                                                                                          |
-|-------------------|---------|------------------------------------------------------------------------------------------------------|
-| diff              | string  | The percentage difference of the amount out compare to the best route.                               |
-| bridgeFee         | object  | Details of the bridge fee which is charged by butter protocol.                                       |
-| tradeType         | number  | Trade type. `0` means 'exactIn', `1` means 'exactOut'.                                               |
-| gasFee            | object  | Estimated gas fee that the user pays for the transaciton on source blockchain.                       |
-| swapFee           | object  | The referral fee payed to referrer.                                                                  |
-| feeConfig         | object  | Configuration for fees, including referrer and fee type.                                             |
-| gasEstimated      | string  | Estimated gas of the source chain transaction (in gas).                                              |
-| gasEstimatedTarget| string  | Estimated gas of the destination chain transaction (in gas).                                         |
-| timeEstimated     | number  | Estimated time for the cross chain transaction (in seconds).                                         |
-| hash              | string  | Route hash.                                                                                          |
-| entrance          | string  | Indicates where the request is from.                                                                 |
-| timestamp         | number  | The time at which the request occurred                                                               |
-| hasLiquidity      | boolean | Whether liquidity is available for the route path.                                                   |
-| srcChain          | object  | Route information on source chain.                                                                   |
-| bridgeChain       | object  | Route information on bridge chain. The field is not returned if it's a same chain swap route.        |
-| dstChain          | object  | Route information on destination chain. The field is not returned if it's a same chain swap route. |
-| totalAmountInUSD  | string  | Total input amount in USD.  This is an optional field.                                               |
-| totalAmountOutUSD | string  | Total output amount in USD. This is an optional field.                                               |
-| contract          | string  | The contract which the user interacts with on source chain.   This is an optional field.             |
-| minAmountOut      | object  | Minimum output amount considering the slippage, with the amount and symbol of the destination token. |
+| Field             | Type    | Description                                                                                                                                                                                              |
+|-------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| diff              | string  | The percentage difference of the amount out compare to the best route.                                                                                                                                   |
+| bridgeFee         | object  | Details of the bridge fee which is charged by butter protocol.                                                                                                                                           |
+| tradeType         | number  | Trade type. `0` means 'exactIn', `1` means 'exactOut'.                                                                                                                                                   |
+| gasFee            | object  | Estimated gas fee that the user pays for the transaciton on source blockchain.                                                                                                                           |
+| swapFee           | object  | The fee that user should pay for butter protocol which includes native fee and token fee. **For native fee, user have to pay extra native token**, for token fee, the fee is deducted from the input token. |
+| feeConfig         | object  | Configuration for fees, including referrer and fee type.                                                                                                                                                 |
+| gasEstimated      | string  | Estimated gas of the source chain transaction (in gas).                                                                                                                                                  |
+| gasEstimatedTarget| string  | Estimated gas of the destination chain transaction (in gas).                                                                                                                                             |
+| timeEstimated     | number  | Estimated time for the cross chain transaction (in seconds).                                                                                                                                             |
+| hash              | string  | Route hash.                                                                                                                                                                                              |
+| entrance          | string  | Indicates where the request is from.                                                                                                                                                                     |
+| timestamp         | number  | The time at which the request occurred                                                                                                                                                                   |
+| hasLiquidity      | boolean | Whether liquidity is available for the route path.                                                                                                                                                       |
+| srcChain          | object  | Route information on source chain.                                                                                                                                                                       |
+| bridgeChain       | object  | Route information on bridge chain. The field is not returned if it's a same chain swap route.                                                                                                            |
+| dstChain          | object  | Route information on destination chain. The field is not returned if it's a same chain swap route.                                                                                                       |
+| totalAmountInUSD  | string  | Total input amount in USD.  This is an optional field.                                                                                                                                                   |
+| totalAmountOutUSD | string  | Total output amount in USD. This is an optional field.                                                                                                                                                   |
+| contract          | string  | The contract which the user interacts with on source chain.   This is an optional field.                                                                                                                 |
+| minAmountOut      | object  | Minimum output amount considering the slippage, with the amount and symbol of the destination token.                                                                                                     |
 
 #### Detailed Explanation of Key Fields
 
