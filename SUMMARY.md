@@ -9,6 +9,7 @@
 
 ## 🔥 Omnichain Development
 
+* [Cross-Chain Flow](omnichain-development/cross-chain-flow.md)
 * [Omnichain Isomorphism](omnichain-development/omnichain-isomorphism.md)
 * [More Possibilities](omnichain-development/more-possibilities.md)
 
