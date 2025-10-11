@@ -1,4 +1,6 @@
-# GET /supportedChainList (deprecated, please use /supportedChainInfo instead)
+# GET /supportedChainList
+
+*Note*: this endpoint is deprecated, please use `/supportedChainInfo` instead.
 
 GET get chain id list that Butter Router supports
 
