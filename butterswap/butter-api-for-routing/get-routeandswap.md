@@ -1,5 +1,7 @@
 # GET /routeAndSwap
 
+*Note*: this endpoint is deprecated, please use `/route` and `/swap` instead.
+
 GET get best routes and generate swap transaction calldata to swap in Butter router
 
 ### Request Parameters
