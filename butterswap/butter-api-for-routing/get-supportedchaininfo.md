@@ -91,6 +91,16 @@ GET /supportedChainInfo
       "name": "XLayer"
     },
     {
+      "id": "130",
+      "type": "EVM",
+      "name": "UniChain"
+    },
+    {
+      "id": "43114",
+      "type": "EVM",
+      "name": "Avalanche"
+    },
+    {
       "id": "1360108768460801",
       "type": "Solana",
       "name": "Solana"
