@@ -81,3 +81,4 @@
 * [🏠 Website](https://www.butternetwork.io/)
 * [🫂 Telegram](https://t.me/butternetwork)
 * [📄 X](https://twitter.com/ButterNetworkio)
+* [✅ Terms of Service](resources/terms-of-service.md)
