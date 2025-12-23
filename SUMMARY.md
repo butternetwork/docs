@@ -64,13 +64,18 @@
 
 * [🫂 User Guide](butterswap/user-guide.md)
 
-## Butter Swap SDK
+[//]: # (## Butter Swap SDK)
 
-* [Install](sdk/install.md)
-* [Config SDK](sdk/2.configure-sdk.md)
-* [Request Routes](sdk/3.request-routes.md)
-* [Execute Route](sdk/4.execute-route.md)
-* [Others](sdk/5.others.md)
+[//]: # ()
+[//]: # (* [Install]&#40;sdk/install.md&#41;)
+
+[//]: # (* [Config SDK]&#40;sdk/2.configure-sdk.md&#41;)
+
+[//]: # (* [Request Routes]&#40;sdk/3.request-routes.md&#41;)
+
+[//]: # (* [Execute Route]&#40;sdk/4.execute-route.md&#41;)
+
+[//]: # (* [Others]&#40;sdk/5.others.md&#41;)
 
 ## Butter Swap Widget
 
