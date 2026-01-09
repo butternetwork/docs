@@ -34,6 +34,7 @@
 * [Integration Guide](bridge/integration.md)
 * [Contract Interface](bridge/bridge-interface.md)
 * [Fee](bridge/bridge-fee.md)
+* [Liquidity Vault](bridge/vault-fee.md)
 * [Deployed Contracts](bridge/deployed-bridge-contracts.md)
 
 ## 🌈 Butter Swap Integration
