@@ -2,7 +2,7 @@
 
 * [🔥 Introduction](README.md)
 
-* [🔥 About Butter Network](about-butter-network.md)
+* [🔥 About Butter Network](resources/about-butter-network.md)
 
 ## 🔥 ZK Light Client
 

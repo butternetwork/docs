@@ -39,7 +39,7 @@ Butter is designed for developers building wallets, DEXs, dApps, and protocols t
 
 If you are new to Butter Network, start with:
 
-1. **[About Butter Network](about-butter-network.md)**
+1. **[About Butter Network](resources/about-butter-network.md)**
 
 2. **[Understanding the ZK Light Client](zk-light-client/understanding-light-client.md)**
 
@@ -69,7 +69,7 @@ Butter’s architecture is optimized for composability, safety, and production-r
 
 ## **Core documentation sections**
 
-### **🔥 [About Butter Network ](about-butter-network.md)**
+### **🔥 [About Butter Network ](resources/about-butter-network.md)**
 
 High-level overview of Butter’s architecture, design philosophy, and role as an omnichain interoperability hub.
 
