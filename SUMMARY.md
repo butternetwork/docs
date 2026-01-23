@@ -1,6 +1,8 @@
 # Table of contents
 
-* [🔥 About Butter Network](README.md)
+##  [🔥 Introduction](README.md)
+
+[//]: # (* [🔥 About Butter Network]&#40;README.md&#41;)
 
 ## 🔥 ZK Light Client
 
