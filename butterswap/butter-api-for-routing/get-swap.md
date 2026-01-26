@@ -5,14 +5,13 @@ GET generated swap transaction calldata to swap in Butter router
 ### Request Parameters
 
 | Name       | Location | Type   | Required | Description                                                                                                                                                        |
-|------------| -------- | ------ | -------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------|----------|--------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | hash       | query    | string | yes      | the route hash returned by /route                                                                                                                                  |
 | slippage   | query    | string | yes      | slippage of swap, a integer in rang \[0, 5000], e.g, 100 means 1%. For cross chain swap, the min slippage is 150， for cross chain from/to TON, min slippage is 300 |
 | from       | query    | string | yes      | sender address on source chain                                                                                                                                     |
 | receiver   | query    | string | yes      | receiver address on destination chain                                                                                                                              |
 | callData   | query    | string | no       | encoded call data if receiver is a contract                                                                                                                        |
 | swapCaller | query    | string | no       | swap caller address, e.g., the smart contract address who calls butter rotuer, or the user account who directly calls butter router                                |
-
 
 ### Request Example
 
@@ -24,25 +23,26 @@ GET /swap?hash=0x286081342b93d276381a8cf4b43990e3a522fb25d0c50c3467dce7ff4543c92
 
 The response contains the following fields:
 
-| Field             | Type    | Description                                                                                                      |
-|-------------------|---------|------------------------------------------------------------------------------------------------------------------|
-| errno             | number  | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
-| message           | string  | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
-| data              | array   | Contains data on the swap transaction details.                                                                   |
+| Field   | Type   | Description                                                                                                      |
+|---------|--------|------------------------------------------------------------------------------------------------------------------|
+| errno   | number | Error code. `0` means success, other values indicate errors, see [error code list](#errors).                     |
+| message | string | Response message. If the request was successful it is `success`, otherwise it gives corresponding error message. |
+| data    | array  | Contains data on the swap transaction details.                                                                   |
 
 ### `data` Field
 
-The `data` field contains an array with one or more transactions data on source blockchain. Each item has the following fields:
+The `data` field contains an array with one or more transactions data on source blockchain. Each item has the following
+fields:
 
-| Field              | Type    | Description                                                                      |
-|--------------------|---------|----------------------------------------------------------------------------------|
-| to                 | string  | The account address which the user interacts with on source chain.               |
-| data               | string  | The encoded transaction data. This field is optional for some blockchains.       |
-| value              | string  | The native token amount to be transferred to the 'to' address.                   |
-| chainId            | string  | Source chain Id.                                                                 |
-| method             | string  | The contract method the user calls. This field is optional for some blockchains. |
-| args               | array   | The detailed arguments information of the method, including type and value.      |
-
+| Field   | Type    | Description                                                                                                                           |
+|---------|---------|---------------------------------------------------------------------------------------------------------------------------------------|
+| to      | string  | The account address which the user interacts with on source chain.                                                                    |
+| value   | string  | The native token amount to be transferred to the 'to' address.                                                                        |
+| chainId | string  | Source chain Id.                                                                                                                      |
+| data    | string  | The encoded transaction data. This field is optional for some blockchains. This field is empty for some blockchains(such as Bitcoin). |
+| method  | string  | The contract method the user calls. This field is empty for some blockchains(such as Bitcoin).                                        |
+| args    | array?  | The detailed arguments information of the method, including type and value.                                                           |
+| memo    | string? | The message that must be included in OP_RETURN field of Bitcoin transaction.                                                          |
 
 #### Response Examples
 
