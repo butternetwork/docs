@@ -407,7 +407,13 @@ To send the swap transaction to source blockchain, you can use the information f
    const wallet = new ethers.Wallet(senderPrivateKey, provider);
    const sender = wallet.address;
 
-   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   const response = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   /*
+   ....
+   asset the request is successful and get the swapData
+    */
+   const swapData = response.data.data[0];
+
    const provider = new ethers.providers.JsonRpcProvider(rpcUrl);
    const gasPrice = await provider.getGasPrice();
    const tx = {
@@ -433,7 +439,13 @@ To send the swap transaction to source blockchain, you can use the information f
    const sender = TronWeb.address.fromPrivateKey(senderPrivateKey) as string;
    const receiver = '0x...'; // Receiver address on destination chain
    
-   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   const response = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   /*
+   ....
+   asset the request is successful and get the swapData
+    */
+   const swapData = response.data.data[0];
+   
    const tronWeb = new TronWeb({
       fullHost: 'https://api.trongrid.io',
    });
@@ -477,12 +489,16 @@ To send the swap transaction to source blockchain, you can use the information f
    const senderPrivateKey = '...'; // Base58 encoded private key
    const sender = ''; // Sender address on Solana chain
    const receiver = ''; // Receiver address on destination chain
-   const swapData = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
-
+   const response = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   /*
+   ....
+   asset the request is successful and get the swapData
+    */
+   const swapData = response.data.data[0];
+   
    const connection = new Connection(solanaRpcUrl);
    const latestBlockHash = await connection.getLatestBlockhash();
    const wallet = new Wallet(Keypair.fromSecretKey(bs58.decode(senderPrivateKey)));
-   
    const transaction = VersionedTransaction.deserialize(Buffer.from(swapData.data, 'hex'));
    transaction.message.recentBlockhash = latestBlockHash.blockhash;
    
@@ -497,4 +513,30 @@ To send the swap transaction to source blockchain, you can use the information f
    });;
    
    console.log('tx signature', txSig);
+```
+
+#### Bitcoin
+
+Here is the example using OKX injected provider.
+
+```typescript
+   const rpcUrl = '...';
+   const sender = '....'; // Sender address on BTC chain
+   const receiver = '...'; // Receiver address on destination chain
+
+   const response = await axios.get(`https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c104abd67bec07a1452169dbc4fff5d0319c&slippage=300&from=${sender}&receiver=${receiver}`)
+   /*
+      ....
+      asset the request is successful and get the swapData
+       */
+   const swapData = response.data.data[0];
+   
+   const result = await window.okxwallet.bitcoin.send({
+      from: sender,
+      to: swapData.to,
+      value: swapData.value,
+      memo: swapData.memo,
+   });
+   
+   console.log('tx hash', receipt.txHash);
 ```
