@@ -10,7 +10,7 @@ layout:
     visible: true
     size: hero
   title:
-    visible: false
+    visible: true
   description:
     visible: false
   tableOfContents:
