@@ -67,6 +67,7 @@
 
 * [🫂 User Guide](butterswap/user-guide.md)
 * [🧭 Swap tutorials](butterswap/swap-tutorials/README.md)
+  * [USDT (TRC20) → BTC (Native Bitcoin): Step-by-Step (No CEX Account)](butterswap/swap-tutorials/swap-usdt-trc20-to-btc.md)
 
 [//]: # (## Butter Swap SDK)
 
