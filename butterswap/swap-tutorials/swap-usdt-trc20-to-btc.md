@@ -54,8 +54,8 @@ Set:
 - **From:** USDT on TRON (TRC20)
 - **To:** BTC on Bitcoin (native BTC)
 
-![USDT TRON to BTC](../../.gitbook/assets/02-usdt-tron-to-btc.png)
-*From=USDT (TRON) and To=BTC (Bitcoin)*
+<img src="/.gitbook/assets/02-usdt-tron-to-btc.png" width="768" alt="USDT TRON to BTC">
+<p><em>From=USDT (TRON) and To=BTC (Bitcoin)</em></p>
 
 ### Step 2 — Connect your TRON wallet (From)
 Click **Connect Tron Wallet** (the big button on the swap card) and connect the wallet that holds your USDT (TRC20).
@@ -63,23 +63,23 @@ Click **Connect Tron Wallet** (the big button on the swap card) and connect the 
 > If you connected the wrong wallet type and your TRON USDT balance shows as 0, switch to a wallet that supports TRON assets (TRC20).  
 > Note: The wallet button in the top-right is not the same as setting your BTC receiving address. You’ll set the BTC destination in **Received Address** next.
  
-![Connect Tron Wallet](../../.gitbook/assets/03-connect-tron-wallet.png)
-*Connect Tron Wallet* 
+<img src="/.gitbook/assets/03-connect-tron-wallet.png" width="768" alt="Connect Tron Wallet">
+<p><em>Connect Tron Wallet</em></p>
 
 ### Step 3 — Set your BTC receiving address on Bitcoin mainnet (two valid paths)
 In **Received Address**, you’ll see two options:
 
-**Option A — Connect wallet (same-wallet flow):**  
+- **Option A — Connect wallet (same-wallet flow):**  
 Click **Connect Wallet** under Received Address to connect to the same wallet holding your TRON USDT. (If it doesn’t provide a Bitcoin address, use Option B.)
 
-**Option B — Enter a BTC address (send to another wallet):**  
+- **Option B — Enter a BTC address (send to another wallet):**  
 Click **Enter Address** and paste your Bitcoin address.
 
 ✅ Valid BTC formats: `bc1...`, `1...`, `3...`  
 ❌ Do not use: `T...` (TRON), `0x...` (EVM)
 
-![Received Address options](../../.gitbook/assets/04-received-address-options.png)
-*Received Address options (Connect Wallet / Enter Address)*  
+<img src="/.gitbook/assets/04-received-address-options.png" width="768" alt="Received Address options">
+<p><em>Received Address options (Connect Wallet / Enter Address)</em></p>  
 
 ### Step 4 — Enter amount and review route + fees
 - Enter the amount of USDT you want to swap  
@@ -89,8 +89,8 @@ Click **Enter Address** and paste your Bitcoin address.
   - Original chain gas fee estimate (TRON fees paid in TRX — bandwidth/energy)
   - Estimated time of arrival
   
-![Route and fees](../../.gitbook/assets/05-route-and-fees.png)
-*Best Route + fee/ETA area*
+<img src="/.gitbook/assets/05-route-and-fees.png" width="768" alt="Best Route and fees">
+<p><em>Best Route + fee/ETA area</em></p>
 
 ### Step 5 — Click Confirm (popup) and sign in your wallet
 Click **Confirm**. A popup will show the swap summary. Confirm, then follow your wallet prompts:
@@ -102,8 +102,8 @@ After submitting, you can monitor progress via:
 - History in the swap UI
 - [ButterSwap Explorer](https://explorer.butterswap.io/en) 
 
-![Confirm swap](../../.gitbook/assets/06-confirm-swap.png)
-*Confirm swap popup*  
+<img src="/.gitbook/assets/06-confirm-swap.png" width="768" alt="Confirm swap popup">
+<p><em>Confirm swap popup</em></p>  
 
 ---
 
