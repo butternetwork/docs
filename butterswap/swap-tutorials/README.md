@@ -18,7 +18,7 @@ New to ButterSwap? Start here first:
 
 ## Tutorials
 
-- [USDT (TRC20) → BTC (Native Bitcoin): Step-by-Step (No CEX Account)](./swap-usdt-trc20-to-btc.md)
+- USDT (TRC20) → BTC (Native Bitcoin): Step-by-Step (No CEX Account)
 - BTC (Native Bitcoin) → TRON (TRX / USDT-TRC20): Step-by-Step (No CEX Account)
 - BTC (Native Bitcoin) → USDT on BNB Chain: Step-by-Step (No CEX Account)
 - BTC (Native Bitcoin) → SOL on Solana: Step-by-Step (No CEX Account)
