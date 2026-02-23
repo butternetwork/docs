@@ -66,6 +66,7 @@
 ## 💰 Butter Swap User Guide
 
 * [🫂 User Guide](butterswap/user-guide.md)
+* [🧭 Swap tutorials](butterswap/swap-tutorials/README.md)
 
 [//]: # (## Butter Swap SDK)
 
