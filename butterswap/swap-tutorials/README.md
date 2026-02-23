@@ -1,18 +1,9 @@
----
-title: "Swap Tutorials (Popular Cross-Chain Pairs)"
-description: "Step-by-step ButterSwap swap tutorials for popular cross-chain pairs. Includes address format warnings, gas tips, fees, timing, and quick fixes."
-layout:
-  toc: true
-  outline: true
-  pagination: true
----
-
 # Swap Tutorials (Popular Cross-Chain Pairs)
 
 These are pair-specific, step-by-step tutorials for swapping across chains on ButterSwap (no CEX account required).
 
 New to ButterSwap? Start here first:  
-- [Butter Swap User Guide](../user-guide.md)
+- [Butter Swap User Guide](/butterswap/user-guide.md)
 
 ## Quick checklist (30 seconds)
 
