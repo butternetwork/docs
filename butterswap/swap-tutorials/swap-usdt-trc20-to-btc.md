@@ -1,13 +1,3 @@
----
-title: "USDT (TRC20) → BTC (Native Bitcoin): Step-by-Step (No CEX Account)"
-description: "Swap USDT on TRON (TRC20) to native BTC on Bitcoin mainnet using ButterSwap. Step-by-step tutorial with address tips, fees, and tracking via History/Explorer."
-slug: "swap-usdt-trc20-to-btc"
-layout:
-  toc: true
-  outline: true
-  pagination: true
----
-
 # USDT (TRC20) → BTC (Native Bitcoin): Step-by-Step (No CEX Account)
 
 This guide shows how to swap USDT on TRON (TRC20) into native BTC on the Bitcoin network using ButterSwap’s cross-chain swap flow (no centralized exchange account required).
