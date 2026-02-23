@@ -12,7 +12,7 @@ layout:
 These are pair-specific, step-by-step tutorials for swapping across chains on ButterSwap (no CEX account required).
 
 New to ButterSwap? Start here first:  
-- [Butter Swap User Guide](butterswap/user-guide.md)
+- [Butter Swap User Guide](../user-guide.md)
 
 ## Quick checklist (30 seconds)
 
