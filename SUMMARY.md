@@ -69,6 +69,7 @@
 * [🧭 Swap tutorials](butterswap/swap-tutorials/README.md)
   * [USDT (TRC20) to BTC (Native Bitcoin)](butterswap/swap-tutorials/swap-usdt-trc20-to-btc.md)
   * [BTC (Native Bitcoin) to USDT on BNB Chain](butterswap/swap-tutorials/swap-btc-to-usdt-bnb-chain.md)
+  * [ETH (Ethereum) to USDT (TRC20) on TRON](butterswap/swap-tutorials/swap-eth-to-usdt-trc20-tron.md)
 
 
 [//]: # (## Butter Swap SDK)
