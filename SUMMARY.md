@@ -66,6 +66,7 @@
 ## 💰 Butter Swap User Guide
 
 * [🫂 User Guide](butterswap/user-guide.md)
+* [🧈 What is a cross-chain swap?](butterswap/what-is-a-cross-chain-swap.md)
 * [🧭 Swap tutorials](butterswap/swap-tutorials/README.md)
   * [USDT (TRC20) to BTC (Native Bitcoin)](butterswap/swap-tutorials/swap-usdt-trc20-to-btc.md)
   * [BTC (Native Bitcoin) to USDT on BNB Chain](butterswap/swap-tutorials/swap-btc-to-usdt-bnb-chain.md)
