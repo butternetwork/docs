@@ -139,3 +139,4 @@ Open the [dApp](https://www.butterswap.io/en/swap) to explore supported routes a
 - [ETH (Ethereum) to USDT (TRC20) on TRON Step by Step](/butterswap/swap-tutorials/swap-eth-to-usdt-trc20-tron.md)
 - [BTC (Native Bitcoin) to USDT (TRC20) on TRON Step by Step](/butterswap/swap-tutorials/swap-btc-to-usdt-trc20-tron.md)
 - [BTC (Native Bitcoin) to USDC on Solana Step by Step](/butterswap/swap-tutorials/swap-btc-to-usdc-solana.md)
+- [Swap into memecoins safely (Solana, BNB Chain, TRON)](/butterswap/swap-tutorials/swap-into-memecoins-safely.md)
