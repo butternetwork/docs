@@ -62,3 +62,22 @@ A confirmation window will pop up after clicking on the **'Confirm'** button, th
 After reviewing the detail, we need to confirm again to proceed the transfer
 
 ![](https://docs.butternetwork.io/\~gitbook/image?url=https%3A%2F%2F753337664-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeZxUsQ7XiGCAg2Xch4Yp%252Fuploads%252F6fEklOsAf2FXbvqdbyo5%252Fimage.png%3Falt%3Dmedia%26token%3D85571bed-2988-48eb-9eca-d716fdbd779d\&width=768\&dpr=4\&quality=100\&sign=d4a2fdf0831c8d6132cf977d8483c2cd816685fe7b566c4f6f4b79e5bf2af1aa)
+
+---
+
+## Learn first
+
+- [🧈 What is a cross-chain swap?](/butterswap/what-is-a-cross-chain-swap.md)
+
+---
+
+## Swap tutorials (popular cross-chain pairs)
+
+These are pair-specific step by step tutorials. Use them if you want exact address format warnings, gas tips, fees and timing notes, and UI aligned steps for a specific route.
+
+- [USDT (TRC20) to BTC (Native Bitcoin) Step by Step](/butterswap/swap-tutorials/swap-usdt-trc20-to-btc.md)
+- [BTC (Native Bitcoin) to USDT on BNB Chain Step by Step](/butterswap/swap-tutorials/swap-btc-to-usdt-bnb-chain.md)
+- [BTC (Native Bitcoin) to USDT (TRC20) on TRON Step by Step](/butterswap/swap-tutorials/swap-btc-to-usdt-trc20-tron.md)
+- [ETH (Ethereum) to USDT (TRC20) on TRON Step by Step](/butterswap/swap-tutorials/swap-eth-to-usdt-trc20-tron.md)
+- [BTC (Native Bitcoin) to USDC on Solana Step by Step](/butterswap/swap-tutorials/swap-btc-to-usdc-solana.md)
+- [Swap into memecoins safely (Solana, BNB Chain, TRON)](/butterswap/swap-tutorials/swap-into-memecoins-safely.md)
