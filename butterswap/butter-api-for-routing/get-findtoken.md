@@ -18,6 +18,8 @@ GET find the token information by the given address
 | data              | array   | An array of token information with the requested address on supported blockchains.                               |
 
 
+> **Authentication**: this endpoint supports API Key authentication. See [Integration Guide - Authentication](integration-guide.md#authentication) for details.
+
 ### Request Example
 
 ```bash

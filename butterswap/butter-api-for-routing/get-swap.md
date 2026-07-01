@@ -13,6 +13,8 @@ GET generated swap transaction calldata to swap in Butter router
 | callData   | query    | string | no       | encoded call data if receiver is a contract                                                                                                                        |
 | swapCaller | query    | string | no       | swap caller address, e.g., the smart contract address who calls butter rotuer, or the user account who directly calls butter router                                |
 
+> **Authentication**: this endpoint supports API Key authentication. See [Integration Guide - Authentication](integration-guide.md#authentication) for details.
+
 ### Request Example
 
 ```bash
