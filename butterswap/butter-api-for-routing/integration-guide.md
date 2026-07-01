@@ -18,9 +18,58 @@ Butter Smart Router service provides the following interfaces:
 4. Assemble Transaction Data Based on Selected Route
    * Interface: `/swap`
    * Description: Assemble transaction data based on the selected route.
-5. Query Best Routes and Assemble Transaction Data
-   * Interface: `/routeAndSwap`
-   * Description: Combination of querying best routes and assembling transaction data.
+
+### Authentication
+
+All endpoints of the Butter Smart Router service support (and recommend) API Key authentication. When authenticating, include the following two headers on **every** request:
+
+| Header          | Value                          | Description                          |
+|-----------------|--------------------------------|--------------------------------------|
+| `x-api-key-id`  | `<your-api-key-id>`            | The identifier of your API key.      |
+| `Authorization` | `Bearer <your-api-secret>`     | The secret paired with your API key. |
+
+> **Note**: API Key authentication is currently optional. Requests without an API Key are still accepted but subject to strict rate limiting, and will be **rejected** after a transition period. For production use, please apply for an API Key from Butter Network.
+
+API Key credentials are issued by the Butter team. Please contact us to apply for your credentials (the same way you apply for a dedicated `entrance`). The examples below use placeholders `<your-api-key-id>` and `<your-api-secret>` — replace them with your own credentials.
+
+#### curl example
+
+```bash
+curl -H "x-api-key-id: <your-api-key-id>" \
+     -H "Authorization: Bearer <your-api-secret>" \
+     "https://bs-router-v3.chainservice.io/route?fromChainId=56&toChainId=137&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x0000000000000000000000000000000000000000&type=exactIn&slippage=150&entrance=<entrance>&from=<from>&receiver=<receiver>"
+```
+
+#### TypeScript example
+
+The same headers work for every routing endpoint (`/route`, `/swap`, `/supportedChainInfo`, `/findToken`, etc.):
+
+```typescript
+const BASE_URL = 'https://bs-router-v3.chainservice.io';
+const API_KEY_ID = process.env.BUTTER_API_KEY_ID!;   // <your-api-key-id>
+const API_SECRET = process.env.BUTTER_API_SECRET!;   // <your-api-secret>
+
+function authHeaders(): Record<string, string> {
+  return {
+    'x-api-key-id': API_KEY_ID,
+    Authorization: `Bearer ${API_SECRET}`,
+  };
+}
+
+const params = new URLSearchParams({
+  fromChainId: '56', toChainId: '137',
+  tokenInAddress: '0x0000000000000000000000000000000000000000',
+  tokenOutAddress: '0x0000000000000000000000000000000000000000',
+  amount: '1', type: 'exactIn', slippage: '150',
+  entrance: '<entrance>', from: '<from>', receiver: '<receiver>',
+});
+const res = await fetch(`${BASE_URL}/route?${params}`, { headers: authHeaders() });
+const body = await res.json();
+if (!res.ok || body.errno !== 0) {
+  throw new Error(`Request failed (${res.status}) errno=${body.errno} ${body.message}`);
+}
+```
+
 
 ### Integration Steps
 
@@ -294,109 +343,9 @@ https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c10
 1. the route data will be expired after 5 minutes, so it is recommended to request the `/route` interface periodically to get the best route and then assemble the transaction data.
 2. if the source token is an ERC20 token, the user needs to approve the router contract to spend the token before calling the swap function. The router contract address is the **to** field in the swap response.
 
-### 5. Query Best Routes and Assemble Transaction Data
+### 5. Send swap transaction
 
-You can also use the `/routeAndSwap` interface to combine querying the best routes and assembling transaction data in one step.
-
-E.g. find the best swap route from 1 ETH on Ethereum to USDT on BSC with 1% slippage and Butter+ as the entrance, and assemble the transaction data for each route. You need to specify the sender address and the receiver address.
-
-#### Request URL with **GET** method:
-
-```url
-https://bs-router-v3.chainservice.io/routeAndSwap?fromChainId=1&toChainId=56&amount=1&tokenInAddress=0x0000000000000000000000000000000000000000&tokenOutAddress=0x55d398326f99059fF775485246999027B3197955&type=exactIn&slippage=100&entrance=Butter%2B&from=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9&receiver=0x2D4C407BBe49438ED859fe965b140dcF1aaB71a9
-```
-
-#### Response:
-
-```json
-{
-  "errno": 0,
-  "message": "success",
-  "data": [
-    {
-      "route": {
-        "diff": "0",
-        "bridgeFee": {
-          "amount": "8.0",
-          "symbol": "USDT"
-        },
-       ...
-        "hash": "0x536ca56a24c05fb5820826fb5e1fd2052fa393d1423cd588f37e6dcf333f3af9",
-        "timestamp": 1713529145811,
-        "srcChain": {
-          "chainId": "1",
-          ...
-        },
-        "bridgeChain": {
-          "chainId": "22776",
-          ...
-          "bridge": "Butter"
-        },
-        "dstChain": {
-          "chainId": "56",
-          ...
-          "totalAmountIn": "3103.310596",
-          "totalAmountOut": "3103.310596",
-          ...
-        },
-        ...
-      },
-      "txParam": {
-        "errno": 0,
-        "message": "success",
-        "data": [
-          {
-            "to": "0xbB21e441fb738F54e6eC244e435475096E179d66",
-            "data": "0x480a341100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000004a000000000000000000000000000000000000000000000000000000000000005a000000000000000000000000000000000000000000000000000000000000003e000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002162b2aee2dd657fb131b28cc34dee6797b66f000000000000000000000000002162b2aee2dd657fb131b28cc34dee6797b66f0000000000000000000000002d4c407bbe49438ed859fe965b140dcf1aab71a9000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec700000000000000000000000000000000000000000000000000000000b798157300000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000002a4efa0646500000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000dac17f958d2ee523a2206206994597c13d831ec700000000000000000000000000000000000000000000000000000000000000000000000000000000000000002d4c407bbe49438ed859fe965b140dcf1aab71a900000000000000000000000000000000000000000000000000000000b798157300000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111254eeb25477b68fb85ed929f73a9605820000000000000000000000001111111254eeb25477b68fb85ed929f73a9605820000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000a8e449022e0000000000000000000000000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000b02d172a00000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000001400000000000000000000000c7bbec68d12a0d1830360f8ec58fa599ba1b0e9b52fd304d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000038000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000142d4c407bbe49438ed859fe965b140dcf1aab71a900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-            "value": "0x0de0b6b3a7640000",
-            "chainId": "1"
-          }
-        ]
-      }
-    },
-    {
-      "route": {
-        "diff": "0.06040927566755252048",
-        "bridgeFee": {
-          "amount": "8.0",
-          "symbol": "USDC"
-        },
-        ...
-        "hash": "0x26cc63276da4db7e5a361e27db242b9e402d2085b9eff0760507c78f181bc4d4",
-        "timestamp": 1713529145812,
-        "srcChain": {
-          "chainId": "1",
-          ...
-        },
-        "bridgeChain": {
-          "chainId": "22776",
-          ...
-          "bridge": "Butter"
-        },
-        "dstChain": {
-          "chainId": "56",
-         ...
-          "totalAmountIn": "3103.685172",
-          "totalAmountOut": "3101.435908547241992898",
-          ...
-      },
-      "error": {
-        "response": {
-          "errno": 2004,
-          "message": "Insufficient Liquidity"
-        },
-        "status": 200,
-        "message": "Insufficient Liquidity",
-        "name": "HttpException"
-      }
-    }
-  ]
-}
-```
-
-### 6. Send swap transaction
-
-To send the swap transaction to source blockchain, you can use the information from the `/swap` or `/routeAndSwap` response. Here are some examples for different blockchain networks.
+To send the swap transaction to source blockchain, you can use the information from the `/swap` response. Here are some examples for different blockchain networks.
 
 #### Common EVM Chains (Ethereum, BSC, Polygon, etc.)
 

@@ -20,6 +20,8 @@ GET get routes from 'tokenIn' to 'tokenOut', support both cross chain and same c
 | affiliate       | query          | string | no       | affiliate nickname and fee rate, the format is '\<nickname\>[:rate]'. If fee rate is not provided, the default base rate (aka source rate) will be used, note that the rate could not be greater than max rate (aka target rate). E.g., for nickname 'butter' which has configured base rate to 0.1% and max rate to 1%, affiliate=butter means the affiliate charges 0.1% affiliate fee and affiliate=butter:50 means it charges 0.5% affiliate fee. For cross chain swap, you can specify multiple affiliates, but for same chain swap, at most one affilate can be accepted. |
 | referrer        | query          | string | no       | referrer address to receive the referrer(affiliate) fee in same chain swap. It is required for Solana same chain swap, and optional for EVM same chain swap. If not provided in EVM same chain swap, the default affiliate wallet will be used.                                                                                                                                                                                                                                                                                                                                 |
 
+> **Authentication**: this endpoint supports API Key authentication. See [Integration Guide - Authentication](integration-guide.md#authentication) for details.
+
 ### Request Example
 
 ```bash

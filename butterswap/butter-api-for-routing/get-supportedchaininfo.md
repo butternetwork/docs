@@ -15,6 +15,8 @@ The response contains the following fields:
 | data              | array   | An array of the supported blockchain Ids.                                                                        |
 
 
+> **Authentication**: this endpoint supports API Key authentication. See [Integration Guide - Authentication](integration-guide.md#authentication) for details.
+
 ### Request Example
 
 ```
