@@ -1,4 +1,4 @@
-# 🟢 Integration Guide
+# Integration Guide
 
 Butter API for Analytics provides dashboard statistics for Butter Swap activity.
 

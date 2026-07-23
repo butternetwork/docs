@@ -17,7 +17,7 @@ layout:
     visible: true
 ---
 
-# 👩‍💻 Butter API for Analytics
+# Butter API for Analytics
 
 Butter API for Analytics provides developers with statistical data.
 
