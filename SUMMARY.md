@@ -60,6 +60,9 @@
   * [GET Swap Info by Order ID](butterswap/butter-api-for-swap-data/get-swap-info-by-order-id.md)
   * [GET Supported Chain Detail List](butterswap/butter-api-for-swap-data/get-supported-chain-detail-list.md)
   * [GET Supported Token Detail List](butterswap/butter-api-for-swap-data/get-supported-token-detail-list.md)
+* [API for Analytics](butterswap/butter-api-for-analytics/README.md)
+  * [Integration Guide](butterswap/butter-api-for-analytics/integration-guide.md)
+  * [GET Dashboard by Unit](butterswap/butter-api-for-analytics/get-dashboard-by-unit.md)
 
 ## 💰 Butter Swap User Guide
 
