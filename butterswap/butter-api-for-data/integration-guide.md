@@ -1,6 +1,6 @@
 # Integration Guide
 
-Butter API for Analytics provides dashboard statistics for Butter Swap activity.
+Butter API for Data provides developers with basic data.
 
 ## Base URL
 
@@ -13,6 +13,8 @@ https://butterapi.chainservice.io
 | Interface | Description |
 | --------- | ----------- |
 | [`GET /api/statistics/dashboard`](get-dashboard-by-unit.md) | Query dashboard analytics by time range. |
+| [`GET /api/token/list`](get-token-list.md) | Query the supported token list, optionally filtered by chain. |
+| [`GET /api/token/detail`](get-token-detail.md) | Query a single token by address or symbol. |
 
 ## Authentication
 
@@ -72,7 +74,8 @@ if (!res.ok || bodyJson.errno !== 0) {
 }
 ```
 
-For endpoint parameters and response fields, see [GET Dashboard By Unit](get-dashboard-by-unit.md).
+For endpoint parameters and response fields, see [GET Dashboard By Unit](get-dashboard-by-unit.md),
+[GET Token List](get-token-list.md), and [GET Token Detail](get-token-detail.md).
 
 ## Error Response
 

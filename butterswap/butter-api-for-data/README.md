@@ -17,13 +17,15 @@ layout:
     visible: true
 ---
 
-# Butter API for Analytics
+# Butter API for Data
 
-Butter API for Analytics provides developers with statistical data.
+Butter API for Data provides developers with basic data.
 
 ## Endpoints
 
 * [GET /api/statistics/dashboard](get-dashboard-by-unit.md)
+* [GET /api/token/list](get-token-list.md)
+* [GET /api/token/detail](get-token-detail.md)
 
 ## Authentication
 
