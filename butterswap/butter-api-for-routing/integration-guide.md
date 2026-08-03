@@ -9,13 +9,16 @@ Butter Smart Router service provides the following interfaces:
 1. Query Supported Chain Info List
    * Interface: `/supportedChainInfo`
    * Description: Query the list of all supported chains by this service.
-2. Find Token Information
+2. Query Supported Token List
+   * Interface: `/supportedTokenList`
+   * Description: Query supported tokens for every chain or for one specified chain.
+3. Find Token Information
    * Interface: `/findToken`
    * Description: Find the token information by the given address.
-3. Query Best Routes
+4. Query Best Routes
    * Interface: `/route`
    * Description: Query the best routes from token1 on Chain A to token2 on Chain B.
-4. Assemble Transaction Data Based on Selected Route
+5. Assemble Transaction Data Based on Selected Route
    * Interface: `/swap`
    * Description: Assemble transaction data based on the selected route.
 
@@ -42,7 +45,7 @@ curl -H "x-api-key-id: <your-api-key-id>" \
 
 #### TypeScript example
 
-The same headers work for every routing endpoint (`/route`, `/swap`, `/supportedChainInfo`, `/findToken`, etc.):
+The same headers work for every routing endpoint (`/route`, `/swap`, `/supportedChainInfo`, `/supportedTokenList`, `/findToken`, etc.):
 
 ```typescript
 const BASE_URL = 'https://bs-router-v3.chainservice.io';
@@ -73,7 +76,7 @@ if (!res.ok || body.errno !== 0) {
 
 ### Integration Steps
 
-### 1.Query Supported Chain Info
+### 1. Query Supported Chain Info
 
 Use the `/supportedChainInfo` interface to query the list of all supported chains by this service. You will receive a list of blockchains' information.
 
@@ -167,7 +170,54 @@ https://bs-router-v3.chainservice.io/supportedChainInfo
 **Note**: the chain info list may change over time as new chains are added or removed from the Butter Router's support, please request this endpoint to get the latest supported chain info.
 
 
-### 2. Find Token Information
+### 2. Query Supported Token List
+
+Use the `/supportedTokenList` interface to query the tokens supported by the Butter Router. Omit `chainId` to get one token group for every supported chain, or provide a supported chain ID to get a single group.
+
+#### Request URLs with **GET** method:
+
+```url
+https://bs-router-v3.chainservice.io/supportedTokenList
+```
+
+```url
+https://bs-router-v3.chainservice.io/supportedTokenList?chainId=1
+```
+
+#### Response:
+
+```json
+{
+  "errno": 0,
+  "message": "success",
+  "data": [
+    {
+      "chainId": 1,
+      "tokens": [
+        {
+          "id": 1,
+          "chainId": 1,
+          "address": "0x0000000000000000000000000000000000000000",
+          "blockchainNetwork": "1",
+          "coingeckoId": "",
+          "decimals": 18,
+          "image": "https://files.mapprotocol.io/bridge/butter64_64.png",
+          "name": "Ether",
+          "rank": 0,
+          "symbol": "ETH",
+          "tokenSecurity": null,
+          "usdprice": 0,
+          "usedIniframe": 0
+        }
+      ]
+    }
+  ]
+}
+```
+
+The response always groups tokens by chain. A filtered request still returns `data` as an array with one group, and an unfiltered request keeps supported chains whose `tokens` array is empty. See the [`GET /supportedTokenList` reference](get-supportedtokenlist.md) for the complete field and error definitions.
+
+### 3. Find Token Information
 
 Use the `/findToken` interface to find the token information by the given address. The result is a list of token information because same token address may exist on different blockchains.
 
@@ -205,7 +255,7 @@ https://bs-router-v3.chainservice.io/findToken?address=0x55d398326f99059fF775485
 }
 ```
 
-### 3. Query Best Routes
+### 4. Query Best Routes
 
 Use the `/route` interface to query the best routes from token1 on Chain A to token2 on Chain B. These routes are sorted by **totalAmountOut** of token2 in descending order.
 
@@ -300,7 +350,7 @@ https://bs-router-v3.chainservice.io/route?fromChainId=1&toChainId=56&amount=1&t
 }
 ```
 
-### 4. Assemble Transaction Data Based on Selected Route
+### 5. Assemble Transaction Data Based on Selected Route
 
 Use the `/swap` interface to assemble transaction data based on the selected route hash from the `/route` response.
 
@@ -343,7 +393,7 @@ https://bs-router-v3.chainservice.io/swap?hash=0x4cae26ffe044267ffa39f5885259c10
 1. the route data will be expired after 5 minutes, so it is recommended to request the `/route` interface periodically to get the best route and then assemble the transaction data.
 2. if the source token is an ERC20 token, the user needs to approve the router contract to spend the token before calling the swap function. The router contract address is the **to** field in the swap response.
 
-### 5. Send swap transaction
+### 6. Send swap transaction
 
 To send the swap transaction to source blockchain, you can use the information from the `/swap` response. Here are some examples for different blockchain networks.
 
