@@ -10,3 +10,5 @@
 | 2005       | Slippage Out of Range  |
 | 2006       | Insufficient amount    |
 | 2007       | Invalid address        |
+| 2017       | Service is busy, please try again later |
+| 2018       | Risky from address     |
