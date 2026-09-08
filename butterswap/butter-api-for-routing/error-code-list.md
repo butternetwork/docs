@@ -12,3 +12,4 @@
 | 2007       | Invalid address        |
 | 2017       | Service is busy, please try again later |
 | 2018       | Risky from address     |
+| 2019       | Quote changed, please request a new route |
