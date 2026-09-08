@@ -1,6 +1,6 @@
 # GET /supportedTokenList
 
-GET the supported token list for every supported chain or for one specified chain.
+GET a list of mainstream tokens for every supported chain or for one specified chain.
 
 ### Request Parameters
 
@@ -30,14 +30,14 @@ GET /supportedTokenList?chainId=1
 |-----------|--------|-------------------------------------------------------------------------------------------------------------------|
 | `errno`   | number | Error code. `0` means success; other values indicate errors. See the [error code list](error-code-list.md).        |
 | `message` | string | Response message. A successful request returns `success`; otherwise it contains the corresponding error message. |
-| `data`    | array  | Supported tokens grouped by chain.                                                                                |
+| `data`    | array  | Mainstream tokens grouped by chain.                                                                               |
 
 Each item in `data` contains:
 
 | Field     | Type   | Description                                                     |
 |-----------|--------|-----------------------------------------------------------------|
 | `chainId` | number | Supported chain ID.                                             |
-| `tokens`  | array  | Complete configured token list for the chain. May be an empty array. |
+| `tokens`  | array  | Mainstream token list for the chain. May be an empty array.       |
 
 Each item in `tokens` contains:
 
@@ -58,6 +58,8 @@ Each item in `tokens` contains:
 | `usedIniframe`      | number         | Embedded-client usage flag; currently `0`.       |
 
 When `chainId` is omitted, `data` contains one group for every supported chain in router configuration order, including groups whose `tokens` array is empty. When `chainId` is provided, `data` is still an array and contains exactly one chain group.
+
+The tokens returned by this endpoint are mainstream tokens on each blockchain, not an exhaustive list of tokens supported by the Butter Router service. The Butter Router service theoretically supports all tokens, including tokens not returned by this endpoint. When Solana is the destination chain, all destination tokens are supported except Token-2022 tokens.
 
 ### Response Examples
 

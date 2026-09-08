@@ -11,7 +11,7 @@ Butter Smart Router service provides the following interfaces:
    * Description: Query the list of all supported chains by this service.
 2. Query Supported Token List
    * Interface: `/supportedTokenList`
-   * Description: Query supported tokens for every chain or for one specified chain.
+   * Description: Query mainstream tokens for every chain or for one specified chain.
 3. Find Token Information
    * Interface: `/findToken`
    * Description: Find the token information by the given address.
@@ -172,7 +172,9 @@ https://bs-router-v3.chainservice.io/supportedChainInfo
 
 ### 2. Query Supported Token List
 
-Use the `/supportedTokenList` interface to query the tokens supported by the Butter Router. Omit `chainId` to get one token group for every supported chain, or provide a supported chain ID to get a single group.
+Use the `/supportedTokenList` interface to query mainstream tokens on each blockchain. Omit `chainId` to get one token group for every supported chain, or provide a supported chain ID to get a single group.
+
+This endpoint does not return an exhaustive list of tokens supported by the Butter Router service. The Butter Router service theoretically supports all tokens, including tokens not returned by this endpoint. When Solana is the destination chain, all destination tokens are supported except Token-2022 tokens.
 
 #### Request URLs with **GET** method:
 
