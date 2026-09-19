@@ -1,3 +1,22 @@
+<div align="center">
+  <a href="https://www.butternetwork.io/"><img src="logo.png" height="96" alt="Butter Network" /></a>
+</div>
+
+<p align="center">
+  <a href="https://butternetwork.io/"><b>Website</b></a> •
+  <a href="https://docs.butternetwork.io/"><b>Documentation</b></a>
+</p>
+
+<h1 align="center">butter-docs</h1>
+
+<p align="center">Butter Network 产品与协议文档</p>
+
+<p align="center">
+  <img alt="type" src="https://img.shields.io/badge/type-GitBook-3884ff" />
+</p>
+
+---
+
 ---
 cover: .gitbook/assets/About Butter Network.png
 coverY: 0
